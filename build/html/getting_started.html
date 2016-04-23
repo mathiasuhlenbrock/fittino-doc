@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Getting started &mdash; Fittino 2-0-0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2-0-0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Fittino 2-0-0 documentation" href="index.html" />
+    <link rel="up" title="User guide" href="user_guide.html" />
+    <link rel="prev" title="TreeSampler" href="tree_sampler.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>Fittino 2-0-0 documentation</span></a></h1>
+        <h2 class="heading"><span>Getting started</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="tree_sampler.html">TreeSampler</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="getting-started">
+<span id="id1"></span><h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>In this section, the functionality of Fittino is discussed in detail with the help of a simple but
+not trivial example optimization problem. It is assumed at this point, that Fittino is successfully
+built and installed on the reader&#8217;s system and that he or she is equipped with a working knowledge
+of the basic usage of the software framework. If this is not the case it is recommmended to consult
+the Installation guide and/or the previous sections of this guide beforehand.</p>
+<p>The optimization problem is the 2-dimensional Rosenbrock function.</p>
+<p>At first, let&#8217;s have a look at input file <code class="docutils literal"><span class="pre">Example.Rosenbrock.Simple.in.root</span></code> which can be found
+in the <code class="docutils literal"><span class="pre">input/</span></code> subdirectory</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&#39;UTF-8&#39;?&gt;
+&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;style/InputFile.xsl&quot;?&gt;
+
+&lt;InputFile&gt;
+
+  &lt;VerbosityLevel&gt;ALWAYS&lt;/VerbosityLevel&gt;
+
+  &lt;Model&gt;
+    &lt;Name&gt;2D Parabola&lt;/Name&gt;
+
+    &lt;ModelParameter&gt;
+      &lt;Name&gt;X1&lt;/Name&gt;
+      &lt;Error&gt;0.01&lt;/Error&gt;
+      &lt;LowerBound&gt;-2&lt;/LowerBound&gt;
+      &lt;UpperBound&gt;2&lt;/UpperBound&gt;
+    &lt;/ModelParameter&gt;
+
+    &lt;ModelParameter&gt;
+      &lt;Name&gt;X2&lt;/Name&gt;
+      &lt;Error&gt;0.01&lt;/Error&gt;
+      &lt;LowerBound&gt;-2&lt;/LowerBound&gt;
+      &lt;UpperBound&gt;2&lt;/UpperBound&gt;
+    &lt;/ModelParameter&gt;
+
+    &lt;FormulaCalculator&gt;
+      &lt;Name&gt;Parabola&lt;/Name&gt;
+      &lt;Formula&gt;[X1]**2+[X2]**2&lt;/Formula&gt;
+    &lt;/FormulaCalculator&gt;
+  &lt;/Model&gt;
+
+  &lt;Tool&gt;
+    &lt;SimpleSampler&gt;&lt;/SimpleSampler&gt;
+  &lt;/Tool&gt;
+
+&lt;/InputFile&gt;
+</pre></div>
+</div>
+<p>The first line indicates XML file. Second line is a reference to the style sheet files. Input file
+can be opend with browser the properties are into tables better for overview of complicated files.</p>
+<p>The verbosity level is set to always which means that only the most important information is printed
+out. Then the model is defined. The model consists of two parameters x_1 and x_2.</p>
+<p>Output</p>
+<div class="highlight-python"><div class="highlight"><pre>---------------------------------------------------------------------------------------
+
+  Welcome to Fittino
+
+---------------------------------------------------------------------------------------
+
+  Initializing the Rosenbrock model
+
+  Initializing the list of model parameters
+
+---------------------------------------------------------------------------------------
+
+  Initializing the Simple parameter sampler
+
+   Configuration
+
+    Name                                               Simple parameter sampler
+    OutputFileName                                     Fittino.out.root
+    WriteAllModelQuantities                            1
+    Chi2Name                                           Chi2
+    InitialChi2Value                                   inf
+    IterationCounterName                               IterationCounter
+    InitialIterationCounterValue                       0
+    OutputTreeName                                     Tree
+    MetaDataTreeName                                   MetaDataTree
+
+---------------------------------------------------------------------------------------
+
+  Running the Simple parameter sampler
+
+---------------------------------------------------------------------------------------
+
+  Terminating the Simple parameter sampler
+
+---------------------------------------------------------------------------------------
+</pre></div>
+</div>
+<p>After displaying a short welcome logo, Fittino initializes the model and its individual components.
+Then, the analysis tool is initialized which is the <code class="docutils literal"><span class="pre">SimpleSampler</span></code>. One can see that all data is
+written out to a ROOT file called <code class="docutils literal"><span class="pre">Fittino.out.root</span></code>. The data tree is called <code class="docutils literal"><span class="pre">Tree</span></code> and the
+meta data tree is called <code class="docutils literal"><span class="pre">MetaDataTree</span></code>.</p>
+<p>If the verbosity level is changed Detailed Output</p>
+<div class="highlight-python"><div class="highlight"><pre>---------------------------------------------------------------------------------------
+
+  Welcome to Fittino
+
+---------------------------------------------------------------------------------------
+
+  Initializing the Rosenbrock model
+
+   Initializing the list of model parameters
+
+    X1                                                 0.00e+00
+    X2                                                 0.00e+00
+
+---------------------------------------------------------------------------------------
+
+  Initializing the Simple parameter sampler
+
+   Configuration
+
+    Name                                               Simple parameter sampler
+    OutputFileName                                     Fittino.out.root
+    WriteAllModelQuantities                            1
+    Chi2Name                                           Chi2
+    InitialChi2Value                                   inf
+    IterationCounterName                               IterationCounter
+    InitialIterationCounterValue                       0
+    OutputTreeName                                     Tree
+    MetaDataTreeName                                   MetaDataTree
+
+---------------------------------------------------------------------------------------
+
+  Running the Simple parameter sampler
+
+---------------------------------------------------------------------------------------
+
+  Iteration step 1
+
+  Set of Rosenbrock model parameters:
+
+    X1                                                -2.00e+00
+    X2                                                -2.00e+00
+
+    -----------------------------------------------------------
+
+    Total chi2                                         3.61e+03
+
+---------------------------------------------------------------------------------------
+
+...
+
+---------------------------------------------------------------------------------------
+
+  Terminating the Simple parameter sampler
+
+---------------------------------------------------------------------------------------
+</pre></div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="tree_sampler.html">TreeSampler</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Mathias Uhlenbrock.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+LinearInterpolationCalculator
+=============================
+
+``File``
+
+``Histogram``
+
+``Variable``

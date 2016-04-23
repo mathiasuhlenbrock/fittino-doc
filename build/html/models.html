@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Models &mdash; Fittino 2-0-0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2-0-0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Fittino 2-0-0 documentation" href="index.html" />
+    <link rel="up" title="Input files" href="input_files.html" />
+    <link rel="next" title="Calculators" href="calculators.html" />
+    <link rel="prev" title="Global configuration options" href="global_configuration_options.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>Fittino 2-0-0 documentation</span></a></h1>
+        <h2 class="heading"><span>Models</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="global_configuration_options.html">Global configuration options</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="calculators.html">Calculators</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="models">
+<span id="id1"></span><h1>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal"><span class="pre">&lt;Model&gt;</span></code> element specifies the (physical) model being analyzed by Fittino. In physics, a
+model is understood as a collection of mathematical prescriptions (&#8220;formulas&#8221;) which map a set of
+parameters onto a set of predictions about the outcome of a set of experimental measurements. By
+finding models where the adaption of a few parameters lead to accurate predictions about a wealth of
+experimental measurements one hopes to gain deeper insight into the underlying principles of Nature.
+Often, however, one is faced with the situation that the model parameters themselves are not directly
+accessible by experiments. Fittino has been developed to obtain information about the model
+parameters in this case, nevertheless.</p>
+<p>The level of accuracy between a theoretical prediction and a measurement is quantified as the
+so-called <img class="math" src="_images/math/8bd0685e3bf9101859d24cf0e851651f182364c9.png" alt="\chi^2"/> value, which is the error-weighted squared difference between prediction
+and measurement. A number of tools in Fittino try to minimize the <img class="math" src="_images/math/8bd0685e3bf9101859d24cf0e851651f182364c9.png" alt="\chi^2"/> value which is
+equivalent to finding the set of parameters that provides the best description of Nature (within the
+limits of the model). The determination of the <img class="math" src="_images/math/8bd0685e3bf9101859d24cf0e851651f182364c9.png" alt="\chi^2"/> value from a set of model parameters
+is accomplished by a collection of dedicated so-called <code class="docutils literal"><span class="pre">Calculators</span></code>. With other words, in order
+to configure a model, the user mainly has to specify the list of model parameters and choose a
+collection of <code class="docutils literal"><span class="pre">Calculators</span></code>. In the following, the list of all model configuration options is
+presented.</p>
+<p><code class="docutils literal"><span class="pre">&lt;Name&gt;</span></code></p>
+<blockquote>
+<div>The name of the model. This name appears at various locations in the output of the program and
+hereby helps with the organization of output files.</div></blockquote>
+<p><strong>Example:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;Name&gt;CMSSM&lt;/Name&gt;
+</pre></div>
+</div>
+<p>sets the model name to <code class="docutils literal"><span class="pre">CMSSM</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">&lt;Tag&gt;</span></code></p>
+<blockquote>
+<div>The tag of the model.</div></blockquote>
+<p><strong>Example:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;Tag&gt;CMSSM&lt;/Tag&gt;
+</pre></div>
+</div>
+<p>sets the model tag to <code class="docutils literal"><span class="pre">CMSSM</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">&lt;ModelParameter&gt;</span></code></p>
+<blockquote>
+<div><p>Specifies a new model parameter. A model parameter can further be configured with the following
+options:</p>
+<p><code class="docutils literal"><span class="pre">&lt;Name&gt;</span></code></p>
+<blockquote>
+<div>The name of the parameter.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">&lt;PlotName&gt;</span></code></p>
+<blockquote>
+<div>The ROOT markup string for the name of the parameter. Since Fittino uses ROOT to make plots,
+the ROOT markup conventions for formatted labels are simply adapted. For more information on
+how formatted labels are marked in ROOT, please have a look at the documentation at the ROOT
+homepage.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">&lt;Value&gt;</span></code></p>
+<blockquote>
+<div>The initial value of the parameter. This option is ignored if an analysis tool calculates the
+starting value of the parameter on its own.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">&lt;Error&gt;</span></code></p>
+<blockquote>
+<div>This value serves as a measure for the scale on which the parameter is allowed to vary.
+Depending on the used analysis tool this value is interpreted differently. Possible
+interpretations are e.g. a step width or a standard deviation in a Gaussian smearing.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">&lt;Unit&gt;</span></code></p>
+<blockquote>
+<div>The physical unit of the parameter.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">&lt;PlotUnit&gt;</span></code></p>
+<blockquote>
+<div>The ROOT markup string for the physical unit of the parameter.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">&lt;LowerBound&gt;</span></code></p>
+<blockquote>
+<div>A parameter cannot assume a value below this limit.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">&lt;UpperBound&gt;</span></code></p>
+<blockquote>
+<div>A parameter cannot assume a value above this limit.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">&lt;Fixed&gt;</span></code></p>
+<blockquote>
+<div>If set to <code class="docutils literal"><span class="pre">true</span></code> the parameter is kept fixed on its starting value specified by the
+<code class="docutils literal"><span class="pre">&lt;Value&gt;</span></code> element. The default value for this option is <code class="docutils literal"><span class="pre">false</span></code>.</div></blockquote>
+</div></blockquote>
+<p><strong>Example:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;ModelParameter&gt;
+  &lt;Name&gt;Mass_h&lt;/Name&gt;
+  &lt;PlotName&gt;M_{h}&lt;/PlotName&gt;
+  &lt;Value&gt;125.5&lt;/Value&gt;
+  &lt;Error&gt;0.3&lt;/Error&gt;
+  &lt;Unit&gt;GeV&lt;/Unit&gt;
+  &lt;PlotUnit&gt;GeV&lt;/PlotUnit&gt;
+  &lt;LowerBound&gt;120&lt;/LowerBound&gt;
+  &lt;UpperBound&gt;130&lt;/UpperBound&gt;
+  &lt;Fixed&gt;false&lt;/Fixed&gt;
+&lt;/ModelParameter&gt;
+</pre></div>
+</div>
+<p>specifies a new model parameter named <code class="docutils literal"><span class="pre">Mass_h</span></code>. The parameter can be varied between 120 and 130
+GeV, with step width 0.3 GeV starting at 125.5 GeV.</p>
+<p><code class="docutils literal"><span class="pre">&lt;Calculator&gt;</span></code></p>
+<blockquote>
+<div><p>One or more calculators can be specified with this element. Detailed information about the
+available calculators and their individual configuration options can be found in the
+<a class="reference internal" href="calculators.html#calculators"><span>Calculators</span></a> section.</p>
+<p><strong>Note:</strong> The calculators are executed in the same order as they are specified, which means that
+<strong>order matters</strong>!</p>
+</div></blockquote>
+<p><code class="docutils literal"><span class="pre">&lt;Chi2Contribution&gt;</span></code></p>
+<blockquote>
+<div>The <code class="docutils literal"><span class="pre">&lt;Chi2Contribution&gt;</span></code> takes the name of a quantity as an argument. The value of this
+quantity is added to the global <img class="math" src="_images/math/8bd0685e3bf9101859d24cf0e851651f182364c9.png" alt="\chi^2"/> value.</div></blockquote>
+<p><strong>Example:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;Chi2Contribution&gt;Penalty&lt;/Chi2Contribution&gt;
+</pre></div>
+</div>
+<p>adds the value of <code class="docutils literal"><span class="pre">Penalty</span></code> to the global <img class="math" src="_images/math/8bd0685e3bf9101859d24cf0e851651f182364c9.png" alt="\chi^2"/> value. <code class="docutils literal"><span class="pre">Penalty</span></code> needs to be calculated
+by a dedicated calculator.</p>
+<p>In conclusion, the overall structure of a model looks like this</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;Model&gt;
+  &lt;Name&gt;ModelName&lt;/Name&gt;
+  &lt;Tag&gt;ModelTag&lt;/Tag&gt;
+  &lt;ModelParameter&gt;
+    ...
+  &lt;/ModelParameter&gt;
+  ...
+  &lt;Calculator&gt;
+    ...
+  &lt;/Calculator&gt;
+  ...
+  &lt;Chi2Contribution&gt;
+    ...
+  &lt;/Chi2Contribution&gt;
+  ...
+&lt;/Model&gt;
+</pre></div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="global_configuration_options.html">Global configuration options</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="calculators.html">Calculators</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Mathias Uhlenbrock.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

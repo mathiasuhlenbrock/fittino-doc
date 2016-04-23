@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>CMake variables &mdash; Fittino 2-0-0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2-0-0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Fittino 2-0-0 documentation" href="index.html" />
+    <link rel="up" title="Installation guide" href="installation_guide.html" />
+    <link rel="next" title="User guide" href="user_guide.html" />
+    <link rel="prev" title="Third-party software" href="third_party_software.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>Fittino 2-0-0 documentation</span></a></h1>
+        <h2 class="heading"><span>CMake variables</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="third_party_software.html">Third-party software</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="user_guide.html">User guide</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="cmake-variables">
+<span id="troubleshooting"></span><h1>CMake variables<a class="headerlink" href="#cmake-variables" title="Permalink to this headline">¶</a></h1>
+<p>The behavior of CMake can be influenced by setting dedicated CMake variables. CMake variables can
+be set using CMake arguments in two ways:</p>
+<ul class="simple">
+<li>Definition of the variables on the command line (<code class="docutils literal"><span class="pre">-D&lt;VARIABLE_NAME&gt;=&lt;VARIABLE_VALUE&gt;</span></code>)</li>
+<li>Specifying an initial cache file (<code class="docutils literal"><span class="pre">-C&lt;PATH_TO_FILE&gt;</span></code>) in which the variables are set</li>
+</ul>
+<p>Many of the available CMake variables such as e.g. software installation paths are set automatically
+when invoking CMake, without the need of user interaction. If this fails, however, the user might be
+urged to set the variables by hand (see next section). On the other hand, the user might want to
+install Fittino at a location different from the default. This can be achieved by setting
+<code class="docutils literal"><span class="pre">CMAKE_INSTALL_PREFIX</span></code> to the desired location, e.g. by typing</p>
+<div class="highlight-python"><div class="highlight"><pre>cmake -DCMAKE_INSTALL_PREFIX=/custom/installation/path ..
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h1>Troubleshooting<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>If the installation of Fittino fails, it is most likely due to a mandatory library which is not
+found by CMake. In this case, it might be imperative to manually modify the CMake search paths. The
+CMake search paths for external software can be influenced by setting the following dedicated CMake
+variables</p>
+<ul class="simple">
+<li>BOOST_ROOT</li>
+<li>ROOT_CONFIG_DIR</li>
+<li>GSL_CONFIG_DIR</li>
+<li>HIGGSBOUNDS_INSTALLATION_PATH</li>
+<li>HIGGSSIGNALS_INSTALLATION_PATH</li>
+<li>FEYNHIGGS_INSTALLATION_PATH</li>
+<li>SLHAEA_INSTALLATION_PATH</li>
+<li>LHAPDF_INSTALLATION_PATH</li>
+</ul>
+<p>and/or via the usual general CMake and environmental variables.</p>
+</div>
+<div class="section" id="outlook">
+<h1>Outlook<a class="headerlink" href="#outlook" title="Permalink to this headline">¶</a></h1>
+<p>Things</p>
+<ul class="simple">
+<li>Even more modular installation</li>
+<li>Fittino SuperBuild</li>
+</ul>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="third_party_software.html">Third-party software</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="user_guide.html">User guide</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Mathias Uhlenbrock.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

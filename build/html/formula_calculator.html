@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>FormulaCalculator &mdash; Fittino 2-0-0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2-0-0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Fittino 2-0-0 documentation" href="index.html" />
+    <link rel="up" title="Calculators" href="calculators.html" />
+    <link rel="next" title="LinearInterpolationCalculator" href="linearinterpolation_calculator.html" />
+    <link rel="prev" title="Chi2Calculator" href="chi2_calculator.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>Fittino 2-0-0 documentation</span></a></h1>
+        <h2 class="heading"><span>FormulaCalculator</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="chi2_calculator.html">Chi2Calculator</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="linearinterpolation_calculator.html">LinearInterpolationCalculator</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="formulacalculator">
+<h1>FormulaCalculator<a class="headerlink" href="#formulacalculator" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal"><span class="pre">FormulaCalculator</span></code> can be used to calculate a novel quantity from existing quantities using a
+mathematical formula. Since Fittino uses the ROOT class <code class="docutils literal"><span class="pre">TFormula</span></code> for formulas, the ROOT
+conventions for formula strings are simply adapted. Within the formulas, existing quantities are
+referenced by name. For more information on how formula strings are written in ROOT and which
+mathematical expressions are available, please have a look at the documentation at the ROOT
+homepage.</p>
+<p>The <code class="docutils literal"><span class="pre">FormulaCalculator</span></code> can be configured using the following options:</p>
+<p><code class="docutils literal"><span class="pre">Name</span></code></p>
+<blockquote>
+<div>The name of the calculated quantity.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">Formula</span></code></p>
+<blockquote>
+<div>The ROOT markup string of the formula.</div></blockquote>
+<p><strong>Example:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;ModelParameter&gt;
+  &lt;Name&gt;X1&lt;/Name&gt;
+  &lt;Error&gt;0.01&lt;/Error&gt;
+  &lt;LowerBound&gt;-2&lt;/LowerBound&gt;
+  &lt;UpperBound&gt;2&lt;/UpperBound&gt;
+&lt;/ModelParameter&gt;
+
+&lt;ModelParameter&gt;
+  &lt;Name&gt;X2&lt;/Name&gt;
+  &lt;Error&gt;0.01&lt;/Error&gt;
+  &lt;LowerBound&gt;-2&lt;/LowerBound&gt;
+  &lt;UpperBound&gt;2&lt;/UpperBound&gt;
+&lt;/ModelParameter&gt;
+
+&lt;FormulaCalculator&gt;
+  &lt;Name&gt;Parabola&lt;/Name&gt;
+  &lt;Formula&gt;[X1]^2+[X2]^2&lt;/Formula&gt;
+&lt;/FormulaCalculator&gt;
+</pre></div>
+</div>
+<p>calculates a two-dimensional parabola from the model parameters <code class="docutils literal"><span class="pre">X1</span></code> and <code class="docutils literal"><span class="pre">X2</span></code>.</p>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="chi2_calculator.html">Chi2Calculator</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="linearinterpolation_calculator.html">LinearInterpolationCalculator</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Mathias Uhlenbrock.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Basic usage &mdash; Fittino 2-0-0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2-0-0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Fittino 2-0-0 documentation" href="index.html" />
+    <link rel="up" title="User guide" href="user_guide.html" />
+    <link rel="next" title="Input files" href="input_files.html" />
+    <link rel="prev" title="User guide" href="user_guide.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>Fittino 2-0-0 documentation</span></a></h1>
+        <h2 class="heading"><span>Basic usage</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="user_guide.html">User guide</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="input_files.html">Input files</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="basic-usage">
+<h1>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h1>
+<p>The basic command structure of Fittino is</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ./fittino [OPTION(S)]
+</pre></div>
+</div>
+<p>If Fittino is run without options, a help text providing short information about all available
+options is shown.</p>
+<p>The individual options are</p>
+<dl class="option">
+<dt id="cmdoption-h">
+<span id="cmdoption--help"></span><code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>A help text providing short information about all available options is shown</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-i">
+<span id="cmdoption--input-file"></span><code class="descname">-i</code><code class="descclassname"> FILE</code><code class="descclassname">, </code><code class="descname">--input-file</code><code class="descclassname">=FILE</code><a class="headerlink" href="#cmdoption-i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fittino uses the input file <code class="file docutils literal"><span class="pre">FILE</span></code></p>
+<p>This is probably the most important option, since without specifying an input file, Fittino does
+not do anything useful. A Fittino input file is an XML file, which allows the detailed
+configuration of the program&#8217;s behavior. For further information on input files, have a look at
+<a class="reference internal" href="input_files.html#input-files"><span>Input files</span></a>. To help you getting started, a number of annotated example input files can be
+found in the <code class="docutils literal"><span class="pre">input/</span></code> directory</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-l">
+<span id="cmdoption--lock-file"></span><code class="descname">-l</code><code class="descclassname"> FILE</code><code class="descclassname">, </code><code class="descname">--lock-file</code><code class="descclassname">=FILE</code><a class="headerlink" href="#cmdoption-l" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fittino uses the file <code class="file docutils literal"><span class="pre">FILE</span></code> for inter process locking</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-v">
+<span id="cmdoption--validate"></span><code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--validate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fittino validates the input file using the libxml2 library</p>
+<p>This option is supposed to help you identifying possible issues with your custom input file.
+A warning or even an error is produced if you have specified an unsupported configuration item
+or if a required option is missing or incorrectly set</p>
+</dd></dl>
+
+<p><strong>Example:</strong></p>
+<p>The command</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ./fittino -v -i ../input/Example.Rosenbrock.Simple.in.xml
+</pre></div>
+</div>
+<p>runs Fittino using the input file <code class="file docutils literal"><span class="pre">Example.Rosenbrock.Simple.in.xml</span></code>. In addition the input
+file is validated.</p>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="user_guide.html">User guide</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="input_files.html">Input files</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Mathias Uhlenbrock.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

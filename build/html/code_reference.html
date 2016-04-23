@@ -1,0 +1,993 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Code reference &mdash; Fittino 2-0-0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2-0-0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Fittino 2-0-0 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>Fittino 2-0-0 documentation</span></a></h1>
+        <h2 class="heading"><span>Code reference</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="code-reference">
+<h1>Code reference<a class="headerlink" href="#code-reference" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="_CPPv2N7Fittino12AnalysisToolE">
+<span id="Fittino::AnalysisTool"></span><span class="target" id="FittinoclassFittino_1_1AnalysisTool"></span><em class="property">class </em><code class="descclassname">Fittino::</code><code class="descname">AnalysisTool</code><a class="headerlink" href="#_CPPv2N7Fittino12AnalysisToolE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract class which provides basic functionality for analysis tools like optimizers or samplers. </p>
+<p>This class contains auxiliary objects needed by every analysis tool such as the tool&#8217;s name,
+ a pointer to the model to be analysed, a counter for the number of iteration steps and a
+ random number generator. </p>
+<p>Inherits from <a class="reference internal" href="#FittinoclassFittino_1_1Tool"><span>Fittino::Tool</span></a></p>
+<p>Subclassed by <a class="reference internal" href="#FittinoclassFittino_1_1OptimizerBase"><span>Fittino::OptimizerBase</span></a>, <a class="reference internal" href="#FittinoclassFittino_1_1SamplerBase"><span>Fittino::SamplerBase</span></a></p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7Fittino12AnalysisTool12AnalysisToolEP9ModelBaseRKN5boost13property_tree5ptreeE">
+<span id="Fittino::AnalysisTool::AnalysisTool__ModelBaseP.boost::property_tree::ptreeCR"></span><span class="target" id="FittinoclassFittino_1_1AnalysisTool_1a23351d355e12281d61b615021c326e5f"></span><code class="descname">AnalysisTool</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N7Fittino9ModelBaseE" title="Fittino::ModelBase">ModelBase</a> *<em>model</em>, <em class="property">const</em> boost::property_tree::ptree &amp;<em>ptree</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino12AnalysisTool12AnalysisToolEP9ModelBaseRKN5boost13property_tree5ptreeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes as input a pointer to the model to be analysed. Via this pointer an association
+ between a model and any class deriving from <a class="reference internal" href="#FittinoclassFittino_1_1AnalysisTool"><span>AnalysisTool</span></a> (especially the concrete
+ optimizer or sampler classes) is established. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino12AnalysisToolD0Ev">
+<span id="Fittino::AnalysisTool::~AnalysisTool"></span><span class="target" id="FittinoclassFittino_1_1AnalysisTool_1a2c2d46953a8d5bdbfa2f5e0584209b7e"></span><code class="descname">~AnalysisTool</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino12AnalysisToolD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard destructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino4Tool11PerformTaskEv">
+<span id="Fittino::Tool::PerformTask"></span><span class="target" id="FittinoclassFittino_1_1Tool_1a108a123fbd12d20fb4eb35854ac4c2f6"></span>void <code class="descname">PerformTask</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino4Tool11PerformTaskEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subdivides the tool&#8217;s action into three distinct phases. It is usually called directly
+ after the creation of a concrete tool. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino4Tool15GetPropertyTreeEv">
+<span id="Fittino::Tool::GetPropertyTree"></span><span class="target" id="FittinoclassFittino_1_1Tool_1a7323450f92e62ee854d6add8711cffd5"></span>boost::property_tree::ptree <code class="descname">GetPropertyTree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino4Tool15GetPropertyTreeEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to retrieve the updated property tree from this tool. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N7Fittino14CalculatorBaseE">
+<span id="Fittino::CalculatorBase"></span><span class="target" id="FittinoclassFittino_1_1CalculatorBase"></span><em class="property">class </em><code class="descclassname">Fittino::</code><code class="descname">CalculatorBase</code><a class="headerlink" href="#_CPPv2N7Fittino14CalculatorBaseE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for calculators. </p>
+<p>Subclassed by Fittino::AstroCalculator, Fittino::AstroFitCalculator, Fittino::CheckMATE2Calculator, Fittino::CheckMATECalculator, Fittino::CheckVacuumCalculator, Fittino::Chi2Calculator, Fittino::FeynHiggsCalculator, Fittino::FeynHiggsChannel, Fittino::FeynHiggsCrossSection, Fittino::FeynHiggsNeutralHiggsCrossSection, Fittino::FeynHiggsRescalingCalculator, Fittino::FormulaCalculator, Fittino::GM2CalcCalculator, Fittino::HDim6Calculator, Fittino::HECCalculator, Fittino::HepMCSplitCalculator, Fittino::HerwigppCalculator, Fittino::HiggsBoundsCalculator, Fittino::HiggsSignalsCalculator, Fittino::HiggsSignalsHadXSCalculator, Fittino::HiggsSignalsHECCalculator, Fittino::HiggsSignalsPartXSCalculator, Fittino::HiggsSignalsSMCalculator, Fittino::LHCLimitCalculator, Fittino::LinearInterpolationCalculatorBase, Fittino::MadGraph2Calculator, Fittino::MadGraphCalculator, Fittino::MicromegasCalculator, Fittino::NewHiggsSignalsHadXSCalculator, Fittino::NLLFastCalculator, Fittino::RegressionCalculator, Fittino::RosenbrockCalculator, <a class="reference internal" href="#FittinoclassFittino_1_1SLHACalculatorBase"><span>Fittino::SLHACalculatorBase</span></a>, Fittino::SModelSCalculator, Fittino::SuperIsoCalculator, Fittino::TreeCalculator</p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7Fittino14CalculatorBase14CalculatorBaseEPK9ModelBasePKN5boost13property_tree5ptreeE">
+<span id="Fittino::CalculatorBase::CalculatorBase__ModelBaseCP.boost::property_tree::ptreeCP"></span><span class="target" id="FittinoclassFittino_1_1CalculatorBase_1a26684ca2dab311b05f1da49ed45f9335"></span><code class="descname">CalculatorBase</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv2N7Fittino9ModelBaseE" title="Fittino::ModelBase">ModelBase</a> *<em>model</em>, <em class="property">const</em> boost::property_tree::ptree *<em>ptree</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino14CalculatorBase14CalculatorBaseEPK9ModelBasePKN5boost13property_tree5ptreeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard constructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino14CalculatorBase7GetNameEv">
+<span id="Fittino::CalculatorBase::GetName"></span><span class="target" id="FittinoclassFittino_1_1CalculatorBase_1a3afc7ab9d42277c10a0dc7e4295a63a2"></span><em class="property">const</em> std::string &amp;<code class="descname">GetName</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino14CalculatorBase7GetNameEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard destructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino14CalculatorBase19SetupMeasuredValuesEv">
+<span id="Fittino::CalculatorBase::SetupMeasuredValues"></span>virtual <span class="target" id="FittinoclassFittino_1_1CalculatorBase_1a1d22ff1f2c09d025501c0e6400f70acf"></span>void <code class="descname">SetupMeasuredValues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino14CalculatorBase19SetupMeasuredValuesEv" title="Permalink to this definition">¶</a></dt>
+<dd><p></p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N7Fittino10ControllerE">
+<span id="Fittino::Controller"></span><span class="target" id="FittinoclassFittino_1_1Controller"></span><em class="property">class </em><code class="descclassname">Fittino::</code><code class="descname">Controller</code><a class="headerlink" href="#_CPPv2N7Fittino10ControllerE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Singleton class for controlling the execution flow of Fittino. </p>
+<p>The instance of the <a class="reference internal" href="#FittinoclassFittino_1_1Controller"><span>Controller</span></a> class is the first object that is created at the beginning of
+ the execution of Fittino. Depending on the user configuration the controller creates
+ instances of further objects (either directly or with the help of a factory) and advises
+ them to perform the specified tasks, hereby controlling the program&#8217;s overall execution
+ flow.</p>
+<p>The controller adresses its purpose in three distinct phases: At first, the controller
+ initializes Fittino by letting an input file interpreter read in user specified options.
+ After that further objects are created and put into action according to the user&#8217;s
+ configuration. At the end, the controller provides the controlled termination of Fittino. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7Fittino10Controller14ExecuteFittinoEv">
+<span id="Fittino::Controller::ExecuteFittino"></span><span class="target" id="FittinoclassFittino_1_1Controller_1a68ab4e7600b2c45f40b41d9ff4832931"></span>void <code class="descname">ExecuteFittino</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino10Controller14ExecuteFittinoEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes Fittino. For that purpose a model inheriting from <a class="reference internal" href="#FittinoclassFittino_1_1ModelBase"><span>ModelBase</span></a> and the required
+ analysis tools inheriting from <a class="reference internal" href="#FittinoclassFittino_1_1AnalysisTool"><span>AnalysisTool</span></a> are created and put into action. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino10Controller17InitializeFittinoEiPPc">
+<span id="Fittino::Controller::InitializeFittino__i.cPP"></span><span class="target" id="FittinoclassFittino_1_1Controller_1ae5bf407911ef8c890eee6b2478cd0d6a"></span>void <code class="descname">InitializeFittino</code><span class="sig-paren">(</span>int <em>argc</em>, char **<em>argv</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino10Controller17InitializeFittinoEiPPc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes Fittino. Takes as input the command line arguments specified by the user
+ while invocing Fittino and stores them for future reference. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino10Controller16TerminateFittinoEv">
+<span id="Fittino::Controller::TerminateFittino"></span><span class="target" id="FittinoclassFittino_1_1Controller_1a3919e71e1299bf0fd50bc03fa8bd4d35"></span>void <code class="descname">TerminateFittino</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino10Controller16TerminateFittinoEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides the controlled termination of Fittino. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Static Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7Fittino10Controller11GetInstanceEv">
+<span id="Fittino::Controller::GetInstance"></span><span class="target" id="FittinoclassFittino_1_1Controller_1aa8b7c59149238ef51829ad1398ed23ac"></span>Fittino::<a class="reference internal" href="#_CPPv2N7Fittino10ControllerE" title="Fittino::Controller">Controller</a> &amp;<code class="descname">GetInstance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino10Controller11GetInstanceEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a static pointer to the unique instance of this class. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N7Fittino7CutBaseE">
+<span id="Fittino::CutBase"></span><span class="target" id="FittinoclassFittino_1_1CutBase"></span><em class="property">class </em><code class="descclassname">Fittino::</code><code class="descname">CutBase</code><a class="headerlink" href="#_CPPv2N7Fittino7CutBaseE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for cuts. </p>
+<p>Subclassed by Fittino::SimpleDoubleCut, Fittino::SimpleStringCut, Fittino::SplineCut</p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7Fittino7CutBase7CutBaseERKN5boost13property_tree5ptreeE">
+<span id="Fittino::CutBase::CutBase__boost::property_tree::ptreeCR"></span><span class="target" id="FittinoclassFittino_1_1CutBase_1a308cc0539bde3f3df6999e2a606b3ec1"></span><code class="descname">CutBase</code><span class="sig-paren">(</span><em class="property">const</em> boost::property_tree::ptree &amp;<em>ptree</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino7CutBase7CutBaseERKN5boost13property_tree5ptreeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard constructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino7CutBase12GetCutNumberEv">
+<span id="Fittino::CutBase::GetCutNumber"></span><span class="target" id="FittinoclassFittino_1_1CutBase_1a570a3cb6dc1849ebe65f20ecc03ca7e0"></span>unsigned int <code class="descname">GetCutNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino7CutBase12GetCutNumberEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the unique number of the cut. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino7CutBase7GetNameEv">
+<span id="Fittino::CutBase::GetName"></span><span class="target" id="FittinoclassFittino_1_1CutBase_1a596f9fe2843dc94e6aefc0671d08f8ce"></span>std::string <code class="descname">GetName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino7CutBase7GetNameEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the name of the cut. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino7CutBaseD0Ev">
+<span id="Fittino::CutBase::~CutBase"></span>virtual <span class="target" id="FittinoclassFittino_1_1CutBase_1aca2d16b05cec36ff5eedec8d4f42b13f"></span><code class="descname">~CutBase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino7CutBaseD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard destructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino7CutBase8IsPassedEv">
+<span id="Fittino::CutBase::IsPassed"></span>virtual <span class="target" id="FittinoclassFittino_1_1CutBase_1a24ea9a7f764326a4a053ff637431142f"></span>bool <code class="descname">IsPassed</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv2N7Fittino7CutBase8IsPassedEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether a cut is passed or not. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N7Fittino8DatabaseE">
+<span id="Fittino::Database"></span><span class="target" id="FittinoclassFittino_1_1Database"></span><em class="property">class </em><code class="descclassname">Fittino::</code><code class="descname">Database</code><a class="headerlink" href="#_CPPv2N7Fittino8DatabaseE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Singleton class containing static data. </p>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N7Fittino15DataStorageBaseE">
+<span id="Fittino::DataStorageBase"></span><span class="target" id="FittinoclassFittino_1_1DataStorageBase"></span><em class="property">class </em><code class="descclassname">Fittino::</code><code class="descname">DataStorageBase</code><a class="headerlink" href="#_CPPv2N7Fittino15DataStorageBaseE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for data storages. </p>
+<p>Subclassed by Fittino::SimpleDataStorage, Fittino::SLHADataStorageBase</p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7Fittino15DataStorageBase15DataStorageBaseEv">
+<span id="Fittino::DataStorageBase::DataStorageBase"></span><span class="target" id="FittinoclassFittino_1_1DataStorageBase_1aebecc15811a23fc0c91569d0c37c85ae"></span><code class="descname">DataStorageBase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino15DataStorageBase15DataStorageBaseEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard constructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino15DataStorageBaseD0Ev">
+<span id="Fittino::DataStorageBase::~DataStorageBase"></span>virtual <span class="target" id="FittinoclassFittino_1_1DataStorageBase_1aa998ac54d066d9a21cbaa4b733794744"></span><code class="descname">~DataStorageBase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino15DataStorageBaseD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard destructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino15DataStorageBase8ReadFileERKNSt6stringE">
+<span id="Fittino::DataStorageBase::ReadFile__ssCR"></span>virtual <span class="target" id="FittinoclassFittino_1_1DataStorageBase_1a62bf6229c5f84558ac702f19aa9ffa10"></span>void <code class="descname">ReadFile</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>inputFileName</em><span class="sig-paren">)</span> const = 0<a class="headerlink" href="#_CPPv2N7Fittino15DataStorageBase8ReadFileERKNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses the input file given as an argument. After calling this method the Configuration
+ instance is initialized and the steering parameters specified in the input file can be
+ retrieved via dedicated getter functions. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N7Fittino13ExceptionBaseE">
+<span id="Fittino::ExceptionBase"></span><span class="target" id="FittinoclassFittino_1_1ExceptionBase"></span><em class="property">class </em><code class="descclassname">Fittino::</code><code class="descname">ExceptionBase</code><a class="headerlink" href="#_CPPv2N7Fittino13ExceptionBaseE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fittino exception base class. </p>
+<p>Exceptions make up the backbone of the error handling system in Fittino. This class provides
+ basic functionality for the various Fittino exception classes. Their main purpose is to
+ print out messages with further information about the occurred exception in a uniform way.
+ Supported Fittino exceptions are <ul class="simple">
+<li>CalculatorException </li>
+<li>ConfigurationException </li>
+<li>ExecutorException </li>
+<li>InputException </li>
+<li>OptimizerException </li>
+<li>RedirectorException </li>
+<li>SLHAFileException </li>
+<li>TimeoutExecutorException </li>
+</ul>
+</p>
+<p>Subclassed by Fittino::CalculatorException, Fittino::ConfigurationException, Fittino::ExecutorException, Fittino::InputException, Fittino::LogicException, Fittino::OptimizerException, Fittino::RedirectorException, Fittino::SLHAFileException</p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7Fittino13ExceptionBase13ExceptionBaseERKNSt6stringE">
+<span id="Fittino::ExceptionBase::ExceptionBase__ssCR"></span><span class="target" id="FittinoclassFittino_1_1ExceptionBase_1a34339a7c3973d1fed9e171dcf014ff1a"></span><code class="descname">ExceptionBase</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino13ExceptionBase13ExceptionBaseERKNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes as input a message string which is printed on the screen as soon as the exception
+ is caught and the <a class="reference internal" href="#FittinoclassFittino_1_1ExceptionBase_1a6a2fff173e2b4b4f6c6a5a575b502620"><span>what()</span></a> method is called. The message is supposed to provide the user
+ with further information about the occurred exception. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino13ExceptionBaseD0Ev">
+<span id="Fittino::ExceptionBase::~ExceptionBase"></span>virtual <span class="target" id="FittinoclassFittino_1_1ExceptionBase_1ab059aa8d989e069baf175cfe56ad3329"></span><code class="descname">~ExceptionBase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino13ExceptionBaseD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard destructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino13ExceptionBase4whatEv">
+<span id="Fittino::ExceptionBase::what"></span><span class="target" id="FittinoclassFittino_1_1ExceptionBase_1a6a2fff173e2b4b4f6c6a5a575b502620"></span><em class="property">const</em> char *<code class="descname">what</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino13ExceptionBase4whatEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints message specified in the constructor. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N7Fittino8ExecutorE">
+<span id="Fittino::Executor"></span><span class="target" id="FittinoclassFittino_1_1Executor"></span><em class="property">class </em><code class="descclassname">Fittino::</code><code class="descname">Executor</code><a class="headerlink" href="#_CPPv2N7Fittino8ExecutorE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes an external program. </p>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N7Fittino7FactoryE">
+<span id="Fittino::Factory"></span><span class="target" id="FittinoclassFittino_1_1Factory"></span><em class="property">class </em><code class="descclassname">Fittino::</code><code class="descname">Factory</code><a class="headerlink" href="#_CPPv2N7Fittino7FactoryE" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#FittinoclassFittino_1_1Factory"><span>Factory</span></a> class for creating calculators, models, optimizers, plotters and samplers. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7Fittino7Factory7FactoryEv">
+<span id="Fittino::Factory::Factory"></span><span class="target" id="FittinoclassFittino_1_1Factory_1aec0eaf9c57d3e9d3b6b0bc2f90490d05"></span><code class="descname">Factory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino7Factory7FactoryEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard constructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino7FactoryD0Ev">
+<span id="Fittino::Factory::~Factory"></span><span class="target" id="FittinoclassFittino_1_1Factory_1a62128ad1348e23b983f746d35979a407"></span><code class="descname">~Factory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino7FactoryD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard destructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino7Factory16CreateCalculatorERKNSt6stringEPK9ModelBaseRN5boost13property_tree5ptreeE">
+<span id="Fittino::Factory::CreateCalculator__ssCR.ModelBaseCP.boost::property_tree::ptreeR"></span><span class="target" id="FittinoclassFittino_1_1Factory_1ac46bd3e627db5196d5d11e24b07d4fc4"></span>Fittino::<a class="reference internal" href="#_CPPv2N7Fittino14CalculatorBaseE" title="Fittino::CalculatorBase">CalculatorBase</a> *<code class="descname">CreateCalculator</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>type</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv2N7Fittino9ModelBaseE" title="Fittino::ModelBase">ModelBase</a> *<em>model</em>, boost::property_tree::ptree &amp;<em>ptree</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino7Factory16CreateCalculatorERKNSt6stringEPK9ModelBaseRN5boost13property_tree5ptreeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a concrete calculator.
+ Supported calculators are <ul class="simple">
+<li>AstroCalculator</li>
+<li>AstroFitCalculator</li>
+<li>CheckVacuumCalculator</li>
+<li>FeynHiggsCalculator</li>
+<li>FormulaCalculator</li>
+<li>HDim6Calculator</li>
+<li>HECCalculator</li>
+<li>HiggsBoundsCalculator</li>
+<li>HiggsSignalsSLHACalculator</li>
+<li>LHCLimitCalculator</li>
+<li>MicromegasCalculator</li>
+<li>RegressionCalculator</li>
+<li>SPhenoSLHACalculator</li>
+<li>SuperIsoCalculator</li>
+<li>TreeCalculator</li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino7Factory9CreateCutERKNSt6stringEP9ModelBaseRKN5boost13property_tree5ptreeE">
+<span id="Fittino::Factory::CreateCut__ssCR.ModelBaseP.boost::property_tree::ptreeCR"></span><span class="target" id="FittinoclassFittino_1_1Factory_1af55f8396aee64da29d36cd4b8e2fb37c"></span>Fittino::<a class="reference internal" href="#_CPPv2N7Fittino7CutBaseE" title="Fittino::CutBase">CutBase</a> *<code class="descname">CreateCut</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>type</em>, <a class="reference internal" href="#_CPPv2N7Fittino9ModelBaseE" title="Fittino::ModelBase">ModelBase</a> *<em>model</em>, <em class="property">const</em> boost::property_tree::ptree &amp;<em>ptree</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino7Factory9CreateCutERKNSt6stringEP9ModelBaseRKN5boost13property_tree5ptreeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a cut object. So far the only supported type is a SplineCut. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino7Factory11CreateModelERKNSt6stringERN5boost13property_tree5ptreeE">
+<span id="Fittino::Factory::CreateModel__ssCR.boost::property_tree::ptreeR"></span><span class="target" id="FittinoclassFittino_1_1Factory_1a894c204bfda1d63046a7ab55a162d8c6"></span>Fittino::<a class="reference internal" href="#_CPPv2N7Fittino9ModelBaseE" title="Fittino::ModelBase">ModelBase</a> *<code class="descname">CreateModel</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>type</em>, boost::property_tree::ptree &amp;<em>ptree</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino7Factory11CreateModelERKNSt6stringERN5boost13property_tree5ptreeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a concrete model.
+ Supported models are <ul class="simple">
+<li>PhysicsModel</li>
+<li>RosenbrockModel</li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino7Factory16CreateObservableERKN5boost13property_tree5ptreeERKN7Fittino10CollectionIPN7Fittino14CalculatorBaseEEE">
+<span id="Fittino::Factory::CreateObservable__boost::property_tree::ptreeCR.Fittino::Collection:Fittino::CalculatorBaseP:CR"></span><span class="target" id="FittinoclassFittino_1_1Factory_1a967fa914cb6d009b2d3e626ff85e0e39"></span>Fittino::Observable *<code class="descname">CreateObservable</code><span class="sig-paren">(</span><em class="property">const</em> boost::property_tree::ptree &amp;<em>ptree</em>, <em class="property">const</em> Fittino::Collection&lt;Fittino::<a class="reference internal" href="#_CPPv2N7Fittino14CalculatorBaseE" title="Fittino::CalculatorBase">CalculatorBase</a> *&gt; &amp;<em>calculators</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino7Factory16CreateObservableERKN5boost13property_tree5ptreeERKN7Fittino10CollectionIPN7Fittino14CalculatorBaseEEE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an Observable with a prediction according to the type specified in the ptree. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino7Factory16CreateObservableERKN5boost13property_tree5ptreeERKN7Fittino10CollectionIPN7Fittino8QuantityEEERKN7Fittino10CollectionIPN7Fittino14CalculatorBaseEEE">
+<span id="Fittino::Factory::CreateObservable__boost::property_tree::ptreeCR.Fittino::Collection:Fittino::QuantityP:CR.Fittino::Collection:Fittino::CalculatorBaseP:CR"></span><span class="target" id="FittinoclassFittino_1_1Factory_1a484a2bba910f08b6d3779d09fa8eba75"></span>Fittino::Observable *<code class="descname">CreateObservable</code><span class="sig-paren">(</span><em class="property">const</em> boost::property_tree::ptree &amp;<em>ptree</em>, <em class="property">const</em> Fittino::Collection&lt;Fittino::<a class="reference internal" href="#_CPPv2N7Fittino8QuantityE" title="Fittino::Quantity">Quantity</a> *&gt; &amp;<em>predictions</em>, <em class="property">const</em> Fittino::Collection&lt;Fittino::<a class="reference internal" href="#_CPPv2N7Fittino14CalculatorBaseE" title="Fittino::CalculatorBase">CalculatorBase</a> *&gt; &amp;<em>calculators</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino7Factory16CreateObservableERKN5boost13property_tree5ptreeERKN7Fittino10CollectionIPN7Fittino8QuantityEEERKN7Fittino10CollectionIPN7Fittino14CalculatorBaseEEE" title="Permalink to this definition">¶</a></dt>
+<dd><p></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino7Factory13CreatePlotterERKNSt6stringERNSt6vectorIP3TH1EERKN5boost13property_tree5ptreeE">
+<span id="Fittino::Factory::CreatePlotter__ssCR.std::vector:TH1P:R.boost::property_tree::ptreeCR"></span><span class="target" id="FittinoclassFittino_1_1Factory_1a7d9c9d73baaf72d67453c453009b8803"></span>Fittino::<a class="reference internal" href="#_CPPv2N7Fittino11PlotterBaseE" title="Fittino::PlotterBase">PlotterBase</a> *<code class="descname">CreatePlotter</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>type</em>, std::vector&lt;TH1 *&gt; &amp;<em>histogramVector</em>, <em class="property">const</em> boost::property_tree::ptree &amp;<em>ptree</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino7Factory13CreatePlotterERKNSt6stringERNSt6vectorIP3TH1EERKN5boost13property_tree5ptreeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a concrete plotter.
+ Supported plotters are <ul class="simple">
+<li>ContourPlotter</li>
+<li>ProfilePlotter</li>
+<li>SimplePlotter</li>
+<li>SummaryPlotter</li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino7Factory10CreateToolERKNSt6stringEP9ModelBaseRKN5boost13property_tree5ptreeE">
+<span id="Fittino::Factory::CreateTool__ssCR.ModelBaseP.boost::property_tree::ptreeCR"></span><span class="target" id="FittinoclassFittino_1_1Factory_1a2ddf354621d5b9f7f8bf537a6c33c16f"></span>Fittino::<a class="reference internal" href="#_CPPv2N7Fittino4ToolE" title="Fittino::Tool">Tool</a> *<code class="descname">CreateTool</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>type</em>, <a class="reference internal" href="#_CPPv2N7Fittino9ModelBaseE" title="Fittino::ModelBase">ModelBase</a> *<em>model</em>, <em class="property">const</em> boost::property_tree::ptree &amp;<em>ptree</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino7Factory10CreateToolERKNSt6stringEP9ModelBaseRKN5boost13property_tree5ptreeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a concrete tool.
+ Supported tools are <ul class="simple">
+<li>GeneticAlgorithmOptimizer</li>
+<li>MarkovChainSampler</li>
+<li>MinuitOptimizer</li>
+<li>ParticleSwarmOptimizer</li>
+<li>SimpleOptimizer</li>
+<li>SimpleSampler</li>
+<li>SimulatedAnnealingOptimizer</li>
+<li>TreeSampler </li>
+</ul>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N7Fittino18HistogramMakerBaseE">
+<span id="Fittino::HistogramMakerBase"></span><span class="target" id="FittinoclassFittino_1_1HistogramMakerBase"></span><em class="property">class </em><code class="descclassname">Fittino::</code><code class="descname">HistogramMakerBase</code><a class="headerlink" href="#_CPPv2N7Fittino18HistogramMakerBaseE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for histogram makers. </p>
+<p>Inherits from <a class="reference internal" href="#FittinoclassFittino_1_1Tool"><span>Fittino::Tool</span></a></p>
+<p>Subclassed by Fittino::Simple1DHistogramMaker, Fittino::Simple2DHistogramMaker, Fittino::Simple3DHistogramMaker</p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7Fittino18HistogramMakerBase18HistogramMakerBaseEP9ModelBaseRKN5boost13property_tree5ptreeE">
+<span id="Fittino::HistogramMakerBase::HistogramMakerBase__ModelBaseP.boost::property_tree::ptreeCR"></span><span class="target" id="FittinoclassFittino_1_1HistogramMakerBase_1a9cb16c2014633a3bc0bf87069dd81479"></span><code class="descname">HistogramMakerBase</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N7Fittino9ModelBaseE" title="Fittino::ModelBase">ModelBase</a> *<em>model</em>, <em class="property">const</em> boost::property_tree::ptree &amp;<em>ptree</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino18HistogramMakerBase18HistogramMakerBaseEP9ModelBaseRKN5boost13property_tree5ptreeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard constructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino18HistogramMakerBaseD0Ev">
+<span id="Fittino::HistogramMakerBase::~HistogramMakerBase"></span><span class="target" id="FittinoclassFittino_1_1HistogramMakerBase_1ae6e2e12a6b967a702da0828722e471d9"></span><code class="descname">~HistogramMakerBase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino18HistogramMakerBaseD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard destructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino4Tool11PerformTaskEv">
+<span id="Fittino::Tool::PerformTask"></span><span class="target" id="FittinoclassFittino_1_1Tool_1a108a123fbd12d20fb4eb35854ac4c2f6"></span>void <code class="descname">PerformTask</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino4Tool11PerformTaskEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subdivides the tool&#8217;s action into three distinct phases. It is usually called directly
+ after the creation of a concrete tool. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino4Tool15GetPropertyTreeEv">
+<span id="Fittino::Tool::GetPropertyTree"></span><span class="target" id="FittinoclassFittino_1_1Tool_1a7323450f92e62ee854d6add8711cffd5"></span>boost::property_tree::ptree <code class="descname">GetPropertyTree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino4Tool15GetPropertyTreeEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to retrieve the updated property tree from this tool. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N7Fittino9MessengerE">
+<span id="Fittino::Messenger"></span><span class="target" id="FittinoclassFittino_1_1Messenger"></span><em class="property">class </em><code class="descclassname">Fittino::</code><code class="descname">Messenger</code><a class="headerlink" href="#_CPPv2N7Fittino9MessengerE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for printing messages of various priority. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Static Attributes</p>
+<dl class="member">
+<dt id="_CPPv2N7Fittino9Messenger11_dashedLineE">
+<span id="Fittino::Messenger::_dashedLine__ssCR"></span><span class="target" id="FittinoclassFittino_1_1Messenger_1ab3d9cf1ceaf39b335e91982f74275153"></span><em class="property">const</em> std::string &amp;<code class="descname">_dashedLine</code><a class="headerlink" href="#_CPPv2N7Fittino9Messenger11_dashedLineE" title="Permalink to this definition">¶</a></dt>
+<dd><p>This string can be used to visually seperate individual processing steps in Fittino. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N7Fittino9ModelBaseE">
+<span id="Fittino::ModelBase"></span><span class="target" id="FittinoclassFittino_1_1ModelBase"></span><em class="property">class </em><code class="descclassname">Fittino::</code><code class="descname">ModelBase</code><a class="headerlink" href="#_CPPv2N7Fittino9ModelBaseE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for Fittino models. </p>
+<p>Subclassed by Fittino::PhysicsModel, Fittino::TestModelBase</p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7Fittino9ModelBase9ModelBaseERN5boost13property_tree5ptreeE">
+<span id="Fittino::ModelBase::ModelBase__boost::property_tree::ptreeR"></span><span class="target" id="FittinoclassFittino_1_1ModelBase_1a122828bf5ac76d9f8b68ad0db85dccb9"></span><code class="descname">ModelBase</code><span class="sig-paren">(</span>boost::property_tree::ptree &amp;<em>ptree</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino9ModelBase9ModelBaseERN5boost13property_tree5ptreeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor using a property tree. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino9ModelBaseD0Ev">
+<span id="Fittino::ModelBase::~ModelBase"></span><span class="target" id="FittinoclassFittino_1_1ModelBase_1a4021cc9ba70a0f3d2da5110d22036dfc"></span><code class="descname">~ModelBase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino9ModelBaseD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard destructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino9ModelBase21GetNumberOfParametersEv">
+<span id="Fittino::ModelBase::GetNumberOfParameters"></span><span class="target" id="FittinoclassFittino_1_1ModelBase_1a4e258dea6d1da5d8d8057c1d13f9469b"></span>int <code class="descname">GetNumberOfParameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino9ModelBase21GetNumberOfParametersEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of parameters of the model. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino9ModelBase18UpdatePropertyTreeEv">
+<span id="Fittino::ModelBase::UpdatePropertyTree"></span><span class="target" id="FittinoclassFittino_1_1ModelBase_1aa7a72f7fd6202436b300bd2421375a67"></span>void <code class="descname">UpdatePropertyTree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino9ModelBase18UpdatePropertyTreeEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the property tree. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino9ModelBase7GetNameEv">
+<span id="Fittino::ModelBase::GetName"></span><span class="target" id="FittinoclassFittino_1_1ModelBase_1a39a6778523747a028ce284e72ae14655"></span>std::string <code class="descname">GetName</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino9ModelBase7GetNameEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the model. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino9ModelBase15GetPropertyTreeEv">
+<span id="Fittino::ModelBase::GetPropertyTree"></span><span class="target" id="FittinoclassFittino_1_1ModelBase_1afcd1078234c2bbcdac3cf1184f943beb"></span>boost::property_tree::ptree <code class="descname">GetPropertyTree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino9ModelBase15GetPropertyTreeEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the property tree. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino9ModelBase25GetCollectionOfParametersEv">
+<span id="Fittino::ModelBase::GetCollectionOfParameters"></span><span class="target" id="FittinoclassFittino_1_1ModelBase_1a37610d95068495b36f39da902efa6f62"></span><em class="property">const</em> Fittino::Collection&lt;Fittino::<a class="reference internal" href="#_CPPv2N7Fittino14ModelParameterE" title="Fittino::ModelParameter">ModelParameter</a> *&gt; &amp;<code class="descname">GetCollectionOfParameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino9ModelBase25GetCollectionOfParametersEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the parameters as a collection. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino9ModelBase5CloneEv">
+<span id="Fittino::ModelBase::Clone"></span>virtual <span class="target" id="FittinoclassFittino_1_1ModelBase_1a4727189144b08d567b4c5025b0eef938"></span>Fittino::<a class="reference internal" href="#_CPPv2N7Fittino9ModelBaseE" title="Fittino::ModelBase">ModelBase</a> *<code class="descname">Clone</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino9ModelBase5CloneEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a pointer to a copy of the model. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N7Fittino14ModelParameterE">
+<span id="Fittino::ModelParameter"></span><span class="target" id="FittinoclassFittino_1_1ModelParameter"></span><em class="property">class </em><code class="descclassname">Fittino::</code><code class="descname">ModelParameter</code><a class="headerlink" href="#_CPPv2N7Fittino14ModelParameterE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for model parameters. </p>
+<p>Inherits from <a class="reference internal" href="#FittinoclassFittino_1_1Quantity"><span>Fittino::Quantity</span></a></p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7Fittino14ModelParameter14ModelParameterERN5boost13property_tree5ptreeE">
+<span id="Fittino::ModelParameter::ModelParameter__boost::property_tree::ptreeR"></span><span class="target" id="FittinoclassFittino_1_1ModelParameter_1a5b437cf122a326730a4f173ad7a9dcba"></span><code class="descname">ModelParameter</code><span class="sig-paren">(</span>boost::property_tree::ptree &amp;<em>ptree</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino14ModelParameter14ModelParameterERN5boost13property_tree5ptreeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard constructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino14ModelParameterD0Ev">
+<span id="Fittino::ModelParameter::~ModelParameter"></span><span class="target" id="FittinoclassFittino_1_1ModelParameter_1ae64ee351069421ef77c5d4fc94619fd0"></span><code class="descname">~ModelParameter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino14ModelParameterD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard destructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino14ModelParameter9IsUpdatedEv">
+<span id="Fittino::ModelParameter::IsUpdated"></span><span class="target" id="FittinoclassFittino_1_1ModelParameter_1acc191e0318a6f80904a014d1263f7ce8"></span>bool <code class="descname">IsUpdated</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino14ModelParameter9IsUpdatedEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns true when the parameter value has been set. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino14ModelParameter8GetErrorEv">
+<span id="Fittino::ModelParameter::GetError"></span><span class="target" id="FittinoclassFittino_1_1ModelParameter_1aa0dd307e160d815ecb9391415ef8aca9"></span>double <code class="descname">GetError</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino14ModelParameter8GetErrorEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the error of the parameter. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino14ModelParameter11PrintStatusEv">
+<span id="Fittino::ModelParameter::PrintStatus"></span>virtual <span class="target" id="FittinoclassFittino_1_1ModelParameter_1a01c1e345bd5380aa29ce11f166e359cd"></span>void <code class="descname">PrintStatus</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino14ModelParameter11PrintStatusEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints the quantity status on screen. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino14ModelParameter10SetUpdatedEb">
+<span id="Fittino::ModelParameter::SetUpdated__b"></span><span class="target" id="FittinoclassFittino_1_1ModelParameter_1a5417206c843670e5a79f16a45281b27d"></span>void <code class="descname">SetUpdated</code><span class="sig-paren">(</span>bool <em>updated</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino14ModelParameter10SetUpdatedEb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the return value of <a class="reference internal" href="#FittinoclassFittino_1_1ModelParameter_1acc191e0318a6f80904a014d1263f7ce8"><span>IsUpdated()</span></a>. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino14ModelParameter8SetValueEd">
+<span id="Fittino::ModelParameter::SetValue__double"></span>virtual <span class="target" id="FittinoclassFittino_1_1ModelParameter_1a394492e073e65f1a03dacd95b0f4709c"></span>void <code class="descname">SetValue</code><span class="sig-paren">(</span>double <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino14ModelParameter8SetValueEd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the value of the parameter. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino14ModelParameter18UpdatePropertyTreeEv">
+<span id="Fittino::ModelParameter::UpdatePropertyTree"></span><span class="target" id="FittinoclassFittino_1_1ModelParameter_1a369601a98872a7a655e2ff5bbfeba2a8"></span>void <code class="descname">UpdatePropertyTree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino14ModelParameter18UpdatePropertyTreeEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update property tree. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino8Quantity13GetLowerBoundEv">
+<span id="Fittino::Quantity::GetLowerBound"></span><span class="target" id="FittinoclassFittino_1_1Quantity_1aad5b52038401531542231485022aeca2"></span>double <code class="descname">GetLowerBound</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino8Quantity13GetLowerBoundEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the lower bound of the quantity. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino8Quantity13GetUpperBoundEv">
+<span id="Fittino::Quantity::GetUpperBound"></span><span class="target" id="FittinoclassFittino_1_1Quantity_1a6ed4bee99ee35a47367b200b7c09654f"></span>double <code class="descname">GetUpperBound</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino8Quantity13GetUpperBoundEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the upper bound of the quantity. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino8Quantity7GetNameEv">
+<span id="Fittino::Quantity::GetName"></span><span class="target" id="FittinoclassFittino_1_1Quantity_1a391e3b4133d51670e886964a9699df12"></span>std::string <code class="descname">GetName</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino8Quantity7GetNameEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the quantity. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino8Quantity11GetPlotNameEv">
+<span id="Fittino::Quantity::GetPlotName"></span><span class="target" id="FittinoclassFittino_1_1Quantity_1a5f13346bda5478da1c4350455829fcea"></span>std::string <code class="descname">GetPlotName</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino8Quantity11GetPlotNameEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the axis title. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino8Quantity8GetValueEv">
+<span id="Fittino::Quantity::GetValue"></span>virtual <span class="target" id="FittinoclassFittino_1_1Quantity_1aa6c583f7ad44dea458a67740297d3704"></span><em class="property">const</em> double &amp;<code class="descname">GetValue</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino8Quantity8GetValueEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the quantity. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N7Fittino13OptimizerBaseE">
+<span id="Fittino::OptimizerBase"></span><span class="target" id="FittinoclassFittino_1_1OptimizerBase"></span><em class="property">class </em><code class="descclassname">Fittino::</code><code class="descname">OptimizerBase</code><a class="headerlink" href="#_CPPv2N7Fittino13OptimizerBaseE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for Fittino parameter optimizers. </p>
+<p>Supported parameter optimizers are <ul class="simple">
+<li>genetic algorithm optimizer </li>
+<li>Minuit optimizer </li>
+<li>particle swarm optimizer </li>
+<li>simple optimizer </li>
+<li>simulated annealing optimizer </li>
+</ul>
+</p>
+<p>Inherits from <a class="reference internal" href="#FittinoclassFittino_1_1AnalysisTool"><span>Fittino::AnalysisTool</span></a></p>
+<p>Subclassed by Fittino::GeneticAlgorithmOptimizer, Fittino::MinuitOptimizer, Fittino::ParticleSwarmOptimizer, Fittino::SimpleOptimizer, Fittino::SimulatedAnnealingOptimizer</p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7Fittino13OptimizerBase13OptimizerBaseEP9ModelBaseRKN5boost13property_tree5ptreeE">
+<span id="Fittino::OptimizerBase::OptimizerBase__ModelBaseP.boost::property_tree::ptreeCR"></span><span class="target" id="FittinoclassFittino_1_1OptimizerBase_1a60f88fcc6a577478d6c85d182cd97a36"></span><code class="descname">OptimizerBase</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N7Fittino9ModelBaseE" title="Fittino::ModelBase">ModelBase</a> *<em>model</em>, <em class="property">const</em> boost::property_tree::ptree &amp;<em>ptree</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino13OptimizerBase13OptimizerBaseEP9ModelBaseRKN5boost13property_tree5ptreeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes as input a pointer to the model to be analysed. Via this pointer an association
+ between a model and the concrete optimizer is established. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino13OptimizerBaseD0Ev">
+<span id="Fittino::OptimizerBase::~OptimizerBase"></span>virtual <span class="target" id="FittinoclassFittino_1_1OptimizerBase_1a524f2920cbd11ea48611f8ebfbfd3aff"></span><code class="descname">~OptimizerBase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino13OptimizerBaseD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard destructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino4Tool11PerformTaskEv">
+<span id="Fittino::Tool::PerformTask"></span><span class="target" id="FittinoclassFittino_1_1Tool_1a108a123fbd12d20fb4eb35854ac4c2f6"></span>void <code class="descname">PerformTask</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino4Tool11PerformTaskEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subdivides the tool&#8217;s action into three distinct phases. It is usually called directly
+ after the creation of a concrete tool. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino4Tool15GetPropertyTreeEv">
+<span id="Fittino::Tool::GetPropertyTree"></span><span class="target" id="FittinoclassFittino_1_1Tool_1a7323450f92e62ee854d6add8711cffd5"></span>boost::property_tree::ptree <code class="descname">GetPropertyTree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino4Tool15GetPropertyTreeEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to retrieve the updated property tree from this tool. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N7Fittino11PlotterBaseE">
+<span id="Fittino::PlotterBase"></span><span class="target" id="FittinoclassFittino_1_1PlotterBase"></span><em class="property">class </em><code class="descclassname">Fittino::</code><code class="descname">PlotterBase</code><a class="headerlink" href="#_CPPv2N7Fittino11PlotterBaseE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for plotters. </p>
+<p>Subclassed by Fittino::ContourPlotter, Fittino::ProfilePlotter, Fittino::SimplePlotter, Fittino::SummaryPlotter, Fittino::ToyFitPlotter</p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7Fittino11PlotterBase11PlotterBaseERNSt6vectorIP3TH1EERKN5boost13property_tree5ptreeE">
+<span id="Fittino::PlotterBase::PlotterBase__std::vector:TH1P:R.boost::property_tree::ptreeCR"></span><span class="target" id="FittinoclassFittino_1_1PlotterBase_1ae2374ff21c659ccf9f34b137d25969f3"></span><code class="descname">PlotterBase</code><span class="sig-paren">(</span>std::vector&lt;TH1 *&gt; &amp;<em>histogramVector</em>, <em class="property">const</em> boost::property_tree::ptree &amp;<em>ptree</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino11PlotterBase11PlotterBaseERNSt6vectorIP3TH1EERKN5boost13property_tree5ptreeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor documentation. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino11PlotterBaseD0Ev">
+<span id="Fittino::PlotterBase::~PlotterBase"></span><span class="target" id="FittinoclassFittino_1_1PlotterBase_1a4d018000376b80cf8dfd9e7cd810375b"></span><code class="descname">~PlotterBase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino11PlotterBaseD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard destructor. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N7Fittino14PredictionBaseE">
+<span id="Fittino::PredictionBase"></span><span class="target" id="FittinoclassFittino_1_1PredictionBase"></span><em class="property">class </em><code class="descclassname">Fittino::</code><code class="descname">PredictionBase</code><a class="headerlink" href="#_CPPv2N7Fittino14PredictionBaseE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for predictions. </p>
+<p>Inherits from <a class="reference internal" href="#FittinoclassFittino_1_1Quantity"><span>Fittino::Quantity</span></a></p>
+<p>Subclassed by Fittino::SimplePrediction, Fittino::SLHAPrediction</p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7Fittino14PredictionBase14PredictionBaseENSt6stringENSt6stringENSt6stringENSt6stringEdd">
+<span id="Fittino::PredictionBase::PredictionBase__ss.ss.ss.ss.double.double"></span><span class="target" id="FittinoclassFittino_1_1PredictionBase_1aac50bb2f901dc6d65579c3237ffefaed"></span><code class="descname">PredictionBase</code><span class="sig-paren">(</span>std::string <em>name</em>, std::string <em>plotName</em>, std::string <em>unit</em>, std::string <em>plotUnit</em>, double <em>lowerBound</em>, double <em>upperBound</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino14PredictionBase14PredictionBaseENSt6stringENSt6stringENSt6stringENSt6stringEdd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor taking name, plotName, unit, plotUnit, lowerBound and upperBound as input. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino14PredictionBase14PredictionBaseERKN5boost13property_tree5ptreeE">
+<span id="Fittino::PredictionBase::PredictionBase__boost::property_tree::ptreeCR"></span><span class="target" id="FittinoclassFittino_1_1PredictionBase_1a9d0e1df7c37950fc1b9378e0919c3ed6"></span><code class="descname">PredictionBase</code><span class="sig-paren">(</span><em class="property">const</em> boost::property_tree::ptree &amp;<em>ptree</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino14PredictionBase14PredictionBaseERKN5boost13property_tree5ptreeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard constructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino14PredictionBaseD0Ev">
+<span id="Fittino::PredictionBase::~PredictionBase"></span><span class="target" id="FittinoclassFittino_1_1PredictionBase_1ab933d2c2ff3e7813a98ae925b349d21f"></span><code class="descname">~PredictionBase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino14PredictionBaseD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard destructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino8Quantity13GetLowerBoundEv">
+<span id="Fittino::Quantity::GetLowerBound"></span><span class="target" id="FittinoclassFittino_1_1Quantity_1aad5b52038401531542231485022aeca2"></span>double <code class="descname">GetLowerBound</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino8Quantity13GetLowerBoundEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the lower bound of the quantity. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino8Quantity13GetUpperBoundEv">
+<span id="Fittino::Quantity::GetUpperBound"></span><span class="target" id="FittinoclassFittino_1_1Quantity_1a6ed4bee99ee35a47367b200b7c09654f"></span>double <code class="descname">GetUpperBound</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino8Quantity13GetUpperBoundEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the upper bound of the quantity. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino8Quantity7GetNameEv">
+<span id="Fittino::Quantity::GetName"></span><span class="target" id="FittinoclassFittino_1_1Quantity_1a391e3b4133d51670e886964a9699df12"></span>std::string <code class="descname">GetName</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino8Quantity7GetNameEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the quantity. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino8Quantity11GetPlotNameEv">
+<span id="Fittino::Quantity::GetPlotName"></span><span class="target" id="FittinoclassFittino_1_1Quantity_1a5f13346bda5478da1c4350455829fcea"></span>std::string <code class="descname">GetPlotName</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino8Quantity11GetPlotNameEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the axis title. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino8Quantity8GetValueEv">
+<span id="Fittino::Quantity::GetValue"></span>virtual <span class="target" id="FittinoclassFittino_1_1Quantity_1aa6c583f7ad44dea458a67740297d3704"></span><em class="property">const</em> double &amp;<code class="descname">GetValue</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino8Quantity8GetValueEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the quantity. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino8Quantity11PrintStatusEv">
+<span id="Fittino::Quantity::PrintStatus"></span>virtual <span class="target" id="FittinoclassFittino_1_1Quantity_1a85501737a83a36b479d6e9ccebc56ce4"></span>void <code class="descname">PrintStatus</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino8Quantity11PrintStatusEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints the quantity status on screen. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino8Quantity8SetValueEd">
+<span id="Fittino::Quantity::SetValue__double"></span>virtual <span class="target" id="FittinoclassFittino_1_1Quantity_1a8b45af4801793f89dc56af0ff0967a08"></span>void <code class="descname">SetValue</code><span class="sig-paren">(</span>double <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino8Quantity8SetValueEd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the value of the quantity. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N7Fittino8QuantityE">
+<span id="Fittino::Quantity"></span><span class="target" id="FittinoclassFittino_1_1Quantity"></span><em class="property">class </em><code class="descclassname">Fittino::</code><code class="descname">Quantity</code><a class="headerlink" href="#_CPPv2N7Fittino8QuantityE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for quantities. </p>
+<p>Subclassed by Fittino::FormulaQuantity, <a class="reference internal" href="#FittinoclassFittino_1_1ModelParameter"><span>Fittino::ModelParameter</span></a>, <a class="reference internal" href="#FittinoclassFittino_1_1PredictionBase"><span>Fittino::PredictionBase</span></a>, Fittino::UncertaintyBase</p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7Fittino8Quantity8QuantityENSt6stringENSt6stringEddd">
+<span id="Fittino::Quantity::Quantity__ss.ss.double.double.double"></span><span class="target" id="FittinoclassFittino_1_1Quantity_1a9df8f865b6c0351343ad27a4ec9162a6"></span><code class="descname">Quantity</code><span class="sig-paren">(</span>std::string <em>name</em>, std::string <em>plotName</em>, double <em>value</em>, double <em>lowerBound</em>, double <em>upperBound</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino8Quantity8QuantityENSt6stringENSt6stringEddd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes as input the name and value of the quantity as well as information for plotting. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino8QuantityD0Ev">
+<span id="Fittino::Quantity::~Quantity"></span><span class="target" id="FittinoclassFittino_1_1Quantity_1aebb22b4dd646e91f11ff7d7c0ccfd494"></span><code class="descname">~Quantity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino8QuantityD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard destructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino8Quantity13GetLowerBoundEv">
+<span id="Fittino::Quantity::GetLowerBound"></span><span class="target" id="FittinoclassFittino_1_1Quantity_1aad5b52038401531542231485022aeca2"></span>double <code class="descname">GetLowerBound</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino8Quantity13GetLowerBoundEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the lower bound of the quantity. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino8Quantity13GetUpperBoundEv">
+<span id="Fittino::Quantity::GetUpperBound"></span><span class="target" id="FittinoclassFittino_1_1Quantity_1a6ed4bee99ee35a47367b200b7c09654f"></span>double <code class="descname">GetUpperBound</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino8Quantity13GetUpperBoundEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the upper bound of the quantity. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino8Quantity7GetNameEv">
+<span id="Fittino::Quantity::GetName"></span><span class="target" id="FittinoclassFittino_1_1Quantity_1a391e3b4133d51670e886964a9699df12"></span>std::string <code class="descname">GetName</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino8Quantity7GetNameEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the quantity. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino8Quantity11GetPlotNameEv">
+<span id="Fittino::Quantity::GetPlotName"></span><span class="target" id="FittinoclassFittino_1_1Quantity_1a5f13346bda5478da1c4350455829fcea"></span>std::string <code class="descname">GetPlotName</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino8Quantity11GetPlotNameEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the axis title. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino8Quantity8GetValueEv">
+<span id="Fittino::Quantity::GetValue"></span>virtual <span class="target" id="FittinoclassFittino_1_1Quantity_1aa6c583f7ad44dea458a67740297d3704"></span><em class="property">const</em> double &amp;<code class="descname">GetValue</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino8Quantity8GetValueEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the quantity. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino8Quantity11PrintStatusEv">
+<span id="Fittino::Quantity::PrintStatus"></span>virtual <span class="target" id="FittinoclassFittino_1_1Quantity_1a85501737a83a36b479d6e9ccebc56ce4"></span>void <code class="descname">PrintStatus</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino8Quantity11PrintStatusEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints the quantity status on screen. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino8Quantity8SetValueEd">
+<span id="Fittino::Quantity::SetValue__double"></span>virtual <span class="target" id="FittinoclassFittino_1_1Quantity_1a8b45af4801793f89dc56af0ff0967a08"></span>void <code class="descname">SetValue</code><span class="sig-paren">(</span>double <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino8Quantity8SetValueEd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the value of the quantity. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N7Fittino15RandomGeneratorE">
+<span id="Fittino::RandomGenerator"></span><span class="target" id="FittinoclassFittino_1_1RandomGenerator"></span><em class="property">class </em><code class="descclassname">Fittino::</code><code class="descname">RandomGenerator</code><a class="headerlink" href="#_CPPv2N7Fittino15RandomGeneratorE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Singleton wrapper class for random number generator. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7Fittino15RandomGenerator4GausEdd">
+<span id="Fittino::RandomGenerator::Gaus__double.double"></span><span class="target" id="FittinoclassFittino_1_1RandomGenerator_1a85a87a197a3051ce4566db0ab38f3051"></span>double <code class="descname">Gaus</code><span class="sig-paren">(</span>double <em>mu</em>, double <em>sigma</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino15RandomGenerator4GausEdd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a Gaussian random number with mean mu and standard deviation sigma. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino15RandomGenerator7PoissonEd">
+<span id="Fittino::RandomGenerator::Poisson__double"></span><span class="target" id="FittinoclassFittino_1_1RandomGenerator_1aa729fb6685ca5febc5c3d4cfe1a5792d"></span>double <code class="descname">Poisson</code><span class="sig-paren">(</span>double <em>lambda</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino15RandomGenerator7PoissonEd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a Poissonian random number with mean value lambda. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino15RandomGenerator7UniformEd">
+<span id="Fittino::RandomGenerator::Uniform__double"></span><span class="target" id="FittinoclassFittino_1_1RandomGenerator_1a40c3c5b5bbcd68550423776e2ee9d713"></span>double <code class="descname">Uniform</code><span class="sig-paren">(</span>double <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino15RandomGenerator7UniformEd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a Uniform random number r with 0 &lt; r &lt;= x. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino15RandomGenerator7UniformEdd">
+<span id="Fittino::RandomGenerator::Uniform__double.double"></span><span class="target" id="FittinoclassFittino_1_1RandomGenerator_1a2ff6307311fdff523e242d0b129a80d7"></span>double <code class="descname">Uniform</code><span class="sig-paren">(</span>double <em>x1</em>, double <em>x2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino15RandomGenerator7UniformEdd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a Uniform random number r with x1 &lt; r &lt;= x2. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino15RandomGenerator7GetSeedEv">
+<span id="Fittino::RandomGenerator::GetSeed"></span><span class="target" id="FittinoclassFittino_1_1RandomGenerator_1abd926d997c93b19806a1ebc5cede425e"></span>unsigned int <code class="descname">GetSeed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino15RandomGenerator7GetSeedEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the random seed. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino15RandomGenerator7IntegerEj">
+<span id="Fittino::RandomGenerator::Integer__unsigned-i"></span><span class="target" id="FittinoclassFittino_1_1RandomGenerator_1a8d3ecaef749b15fec5cc3a93b4957837"></span>unsigned int <code class="descname">Integer</code><span class="sig-paren">(</span>unsigned int <em>imax</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino15RandomGenerator7IntegerEj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an Integer random number r with 0 &lt;= r &lt;= imax -1. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino15RandomGenerator7SetSeedEj">
+<span id="Fittino::RandomGenerator::SetSeed__unsigned-i"></span><span class="target" id="FittinoclassFittino_1_1RandomGenerator_1a372839052d390d06c36f5d3f3f7c6cd8"></span>void <code class="descname">SetSeed</code><span class="sig-paren">(</span>unsigned int <em>randomSeed</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino15RandomGenerator7SetSeedEj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the random seed for the generator. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino15RandomGenerator12GetGeneratorEv">
+<span id="Fittino::RandomGenerator::GetGenerator"></span><span class="target" id="FittinoclassFittino_1_1RandomGenerator_1ad5a607d6858329df9c69c41af50e9943"></span>TRandom3 *<code class="descname">GetGenerator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino15RandomGenerator12GetGeneratorEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the actual random generator. Do we want this? Or should we stick to wrapper functions for every pdf? </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Static Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7Fittino15RandomGenerator11GetInstanceEv">
+<span id="Fittino::RandomGenerator::GetInstance"></span><span class="target" id="FittinoclassFittino_1_1RandomGenerator_1a5245685e354b3874e570443e456d772d"></span>Fittino::<a class="reference internal" href="#_CPPv2N7Fittino15RandomGeneratorE" title="Fittino::RandomGenerator">RandomGenerator</a> *<code class="descname">GetInstance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino15RandomGenerator11GetInstanceEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a static pointer to the unique instance of this class. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N7Fittino10RedirectorE">
+<span id="Fittino::Redirector"></span><span class="target" id="FittinoclassFittino_1_1Redirector"></span><em class="property">class </em><code class="descclassname">Fittino::</code><code class="descname">Redirector</code><a class="headerlink" href="#_CPPv2N7Fittino10RedirectorE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Redirects stdout and stderr to a file. </p>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N7Fittino11SamplerBaseE">
+<span id="Fittino::SamplerBase"></span><span class="target" id="FittinoclassFittino_1_1SamplerBase"></span><em class="property">class </em><code class="descclassname">Fittino::</code><code class="descname">SamplerBase</code><a class="headerlink" href="#_CPPv2N7Fittino11SamplerBaseE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for Fittino parameter samplers. </p>
+<p>Inherits from <a class="reference internal" href="#FittinoclassFittino_1_1AnalysisTool"><span>Fittino::AnalysisTool</span></a></p>
+<p>Subclassed by Fittino::MarkovChainSampler, Fittino::SimpleSampler, Fittino::TreeSampler</p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7Fittino11SamplerBase11SamplerBaseEP9ModelBaseRKN5boost13property_tree5ptreeE">
+<span id="Fittino::SamplerBase::SamplerBase__ModelBaseP.boost::property_tree::ptreeCR"></span><span class="target" id="FittinoclassFittino_1_1SamplerBase_1a328e81befdab8d79c382487dabe75275"></span><code class="descname">SamplerBase</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N7Fittino9ModelBaseE" title="Fittino::ModelBase">ModelBase</a> *<em>model</em>, <em class="property">const</em> boost::property_tree::ptree &amp;<em>ptree</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino11SamplerBase11SamplerBaseEP9ModelBaseRKN5boost13property_tree5ptreeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes as input a pointer to the model to be analysed. Via this pointer an association
+ between a model and the concrete sampler is established. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino11SamplerBaseD0Ev">
+<span id="Fittino::SamplerBase::~SamplerBase"></span>virtual <span class="target" id="FittinoclassFittino_1_1SamplerBase_1aca08191adde14c9b400071ce4a3da6b3"></span><code class="descname">~SamplerBase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino11SamplerBaseD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard destructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino4Tool11PerformTaskEv">
+<span id="Fittino::Tool::PerformTask"></span><span class="target" id="FittinoclassFittino_1_1Tool_1a108a123fbd12d20fb4eb35854ac4c2f6"></span>void <code class="descname">PerformTask</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino4Tool11PerformTaskEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subdivides the tool&#8217;s action into three distinct phases. It is usually called directly
+ after the creation of a concrete tool. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino4Tool15GetPropertyTreeEv">
+<span id="Fittino::Tool::GetPropertyTree"></span><span class="target" id="FittinoclassFittino_1_1Tool_1a7323450f92e62ee854d6add8711cffd5"></span>boost::property_tree::ptree <code class="descname">GetPropertyTree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino4Tool15GetPropertyTreeEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to retrieve the updated property tree from this tool. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N7Fittino18SLHACalculatorBaseE">
+<span id="Fittino::SLHACalculatorBase"></span><span class="target" id="FittinoclassFittino_1_1SLHACalculatorBase"></span><em class="property">class </em><code class="descclassname">Fittino::</code><code class="descname">SLHACalculatorBase</code><a class="headerlink" href="#_CPPv2N7Fittino18SLHACalculatorBaseE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for SLHA compatible model calculators. </p>
+<p>Inherits from <a class="reference internal" href="#FittinoclassFittino_1_1CalculatorBase"><span>Fittino::CalculatorBase</span></a></p>
+<p>Subclassed by Fittino::HiggsSignalsSLHACalculator, Fittino::SPhenoSLHACalculator</p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7Fittino18SLHACalculatorBase18SLHACalculatorBaseEPK9ModelBase">
+<span id="Fittino::SLHACalculatorBase::SLHACalculatorBase__ModelBaseCP"></span><span class="target" id="FittinoclassFittino_1_1SLHACalculatorBase_1adaa83959643577ff01296110291e15ec"></span><code class="descname">SLHACalculatorBase</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv2N7Fittino9ModelBaseE" title="Fittino::ModelBase">ModelBase</a> *<em>model</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino18SLHACalculatorBase18SLHACalculatorBaseEPK9ModelBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard constructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino18SLHACalculatorBaseD0Ev">
+<span id="Fittino::SLHACalculatorBase::~SLHACalculatorBase"></span><span class="target" id="FittinoclassFittino_1_1SLHACalculatorBase_1aa7d178e321d91d3e63314ca460d09b4d"></span><code class="descname">~SLHACalculatorBase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino18SLHACalculatorBaseD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard destructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino14CalculatorBase7GetNameEv">
+<span id="Fittino::CalculatorBase::GetName"></span><span class="target" id="FittinoclassFittino_1_1CalculatorBase_1a3afc7ab9d42277c10a0dc7e4295a63a2"></span><em class="property">const</em> std::string &amp;<code class="descname">GetName</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N7Fittino14CalculatorBase7GetNameEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard destructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino14CalculatorBase19SetupMeasuredValuesEv">
+<span id="Fittino::CalculatorBase::SetupMeasuredValues"></span>virtual <span class="target" id="FittinoclassFittino_1_1CalculatorBase_1a1d22ff1f2c09d025501c0e6400f70acf"></span>void <code class="descname">SetupMeasuredValues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino14CalculatorBase19SetupMeasuredValuesEv" title="Permalink to this definition">¶</a></dt>
+<dd><p></p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenclass: Cannot find class &#8220;Fittino::SLHADatastorageBase&#8221; in doxygen xml output for project &#8220;Fittino&#8221; from directory: /home/uhlenbrock/programs/fittino/fittino-2.0.0/doc/xml/</p>
+</div>
+<dl class="class">
+<dt id="_CPPv2N7Fittino4ToolE">
+<span id="Fittino::Tool"></span><span class="target" id="FittinoclassFittino_1_1Tool"></span><em class="property">class </em><code class="descclassname">Fittino::</code><code class="descname">Tool</code><a class="headerlink" href="#_CPPv2N7Fittino4ToolE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract class which provides basic functionality for all tools. </p>
+<p>Subclassed by <a class="reference internal" href="#FittinoclassFittino_1_1AnalysisTool"><span>Fittino::AnalysisTool</span></a>, Fittino::EdgeDetectionTool, <a class="reference internal" href="#FittinoclassFittino_1_1HistogramMakerBase"><span>Fittino::HistogramMakerBase</span></a>, Fittino::SummaryHistogramMaker</p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N7Fittino4Tool4ToolEP9ModelBaseRKN5boost13property_tree5ptreeE">
+<span id="Fittino::Tool::Tool__ModelBaseP.boost::property_tree::ptreeCR"></span><span class="target" id="FittinoclassFittino_1_1Tool_1a615e2c73f41476c3230890542fb26874"></span><code class="descname">Tool</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N7Fittino9ModelBaseE" title="Fittino::ModelBase">ModelBase</a> *<em>model</em>, <em class="property">const</em> boost::property_tree::ptree &amp;<em>ptree</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino4Tool4ToolEP9ModelBaseRKN5boost13property_tree5ptreeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes as input a pointer to the model to be analysed. Via this pointer an association
+ between a model and any class deriving from <a class="reference internal" href="#FittinoclassFittino_1_1Tool"><span>Tool</span></a> (especially the concrete
+ optimizer or sampler classes) is established. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino4ToolD0Ev">
+<span id="Fittino::Tool::~Tool"></span><span class="target" id="FittinoclassFittino_1_1Tool_1a0c7d71402c0efe381a2ab6670a379448"></span><code class="descname">~Tool</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino4ToolD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard destructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino4Tool11PerformTaskEv">
+<span id="Fittino::Tool::PerformTask"></span><span class="target" id="FittinoclassFittino_1_1Tool_1a108a123fbd12d20fb4eb35854ac4c2f6"></span>void <code class="descname">PerformTask</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino4Tool11PerformTaskEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subdivides the tool&#8217;s action into three distinct phases. It is usually called directly
+ after the creation of a concrete tool. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N7Fittino4Tool15GetPropertyTreeEv">
+<span id="Fittino::Tool::GetPropertyTree"></span><span class="target" id="FittinoclassFittino_1_1Tool_1a7323450f92e62ee854d6add8711cffd5"></span>boost::property_tree::ptree <code class="descname">GetPropertyTree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N7Fittino4Tool15GetPropertyTreeEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to retrieve the updated property tree from this tool. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Mathias Uhlenbrock.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

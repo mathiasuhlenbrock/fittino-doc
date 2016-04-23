@@ -1,0 +1,31 @@
+\begin{theindex}
+\def\bigletter#1{{\Large\sffamily#1}\nopagebreak\vspace{1mm}}
+
+  \bigletter {Symbols}
+  \item -h, --help
+    \subitem command line option, \hyperpage{9}
+  \item -i FILE, --input-file=FILE
+    \subitem command line option, \hyperpage{9}
+  \item -l FILE, --lock-file=FILE
+    \subitem command line option, \hyperpage{9}
+  \item -v, --validate
+    \subitem command line option, \hyperpage{9}
+
+  \indexspace
+  \bigletter C
+  \item command line option
+    \subitem -h, --help, \hyperpage{9}
+    \subitem -i FILE, --input-file=FILE, \hyperpage{9}
+    \subitem -l FILE, --lock-file=FILE, \hyperpage{9}
+    \subitem -v, --validate, \hyperpage{9}
+
+  \indexspace
+  \bigletter E
+  \item environment variable
+    \subitem PATH, \hyperpage{9}
+
+  \indexspace
+  \bigletter P
+  \item PATH, \hyperpage{9}
+
+\end{theindex}

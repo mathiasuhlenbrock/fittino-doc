@@ -1,0 +1,51 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Installation guide}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Getting the sources}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Prerequisites}{3}{section.2.2}
+\contentsline {section}{\numberline {2.3}Building and installing Fittino}{4}{section.2.3}
+\contentsline {section}{\numberline {2.4}Third-party software}{4}{section.2.4}
+\contentsline {section}{\numberline {2.5}CMake variables}{6}{section.2.5}
+\contentsline {section}{\numberline {2.6}Troubleshooting}{6}{section.2.6}
+\contentsline {section}{\numberline {2.7}Outlook}{7}{section.2.7}
+\contentsline {chapter}{\numberline {3}User guide}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}Basic usage}{9}{section.3.1}
+\contentsline {section}{\numberline {3.2}Input files}{10}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Why XML?}{10}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Input file structure}{10}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Global configuration options}{11}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Models}{11}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Calculators}{13}{subsection.3.2.5}
+\contentsline {subsubsection}{Chi2Calculator}{14}{subsubsection*.7}
+\contentsline {subsubsection}{FormulaCalculator}{15}{subsubsection*.8}
+\contentsline {subsubsection}{LinearInterpolationCalculator}{15}{subsubsection*.9}
+\contentsline {subsubsection}{RegressionCalculator}{16}{subsubsection*.10}
+\contentsline {subsubsection}{RosenbrockCalculator}{16}{subsubsection*.11}
+\contentsline {subsubsection}{TreeCalculator}{16}{subsubsection*.12}
+\contentsline {subsection}{\numberline {3.2.6}Tools}{16}{subsection.3.2.6}
+\contentsline {subsubsection}{HistogramMakers}{17}{subsubsection*.13}
+\contentsline {paragraph}{ContourHistogramMaker}{18}{paragraph*.14}
+\contentsline {paragraph}{ProfileHistogramMaker}{18}{paragraph*.15}
+\contentsline {paragraph}{Simple1DHistogramMaker}{18}{paragraph*.16}
+\contentsline {paragraph}{Simple2DHistogramMaker}{18}{paragraph*.17}
+\contentsline {paragraph}{Simple3DHistogramMaker}{18}{paragraph*.18}
+\contentsline {paragraph}{SummaryHistogramMaker}{18}{paragraph*.19}
+\contentsline {subsubsection}{Optimizers}{19}{subsubsection*.20}
+\contentsline {paragraph}{GeneticAlgorithmOptimizer}{19}{paragraph*.21}
+\contentsline {paragraph}{MinuitOptimizer}{19}{paragraph*.22}
+\contentsline {paragraph}{ParticleSwarmOptimizer}{19}{paragraph*.23}
+\contentsline {paragraph}{SimpleOptimizer}{20}{paragraph*.24}
+\contentsline {paragraph}{SimulatedAnnealingOptimizer}{20}{paragraph*.25}
+\contentsline {subsubsection}{Plotters}{20}{subsubsection*.26}
+\contentsline {paragraph}{ContourPlotter}{20}{paragraph*.27}
+\contentsline {paragraph}{ProfilePlotter}{21}{paragraph*.28}
+\contentsline {paragraph}{SimplePlotter}{21}{paragraph*.29}
+\contentsline {paragraph}{SummaryPlotter}{21}{paragraph*.30}
+\contentsline {paragraph}{ToyFitPlotter}{21}{paragraph*.31}
+\contentsline {subsubsection}{Samplers}{21}{subsubsection*.32}
+\contentsline {paragraph}{HigherOrderMarkovChainSampler}{22}{paragraph*.33}
+\contentsline {paragraph}{MarkovChainSampler}{22}{paragraph*.34}
+\contentsline {paragraph}{SimpleSampler}{22}{paragraph*.35}
+\contentsline {paragraph}{TreeSampler}{22}{paragraph*.36}
+\contentsline {section}{\numberline {3.3}Getting started}{23}{section.3.3}
+\contentsline {chapter}{Index}{27}{section*.37}

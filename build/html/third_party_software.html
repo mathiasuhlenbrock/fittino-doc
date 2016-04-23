@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Third-party software &mdash; Fittino 2-0-0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2-0-0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Fittino 2-0-0 documentation" href="index.html" />
+    <link rel="up" title="Installation guide" href="installation_guide.html" />
+    <link rel="next" title="CMake variables" href="troubleshooting.html" />
+    <link rel="prev" title="Building and installing Fittino" href="building.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>Fittino 2-0-0 documentation</span></a></h1>
+        <h2 class="heading"><span>Third-party software</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="building.html">Building and installing Fittino</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="troubleshooting.html">CMake variables</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="third-party-software">
+<h1>Third-party software<a class="headerlink" href="#third-party-software" title="Permalink to this headline">¶</a></h1>
+<p>The following list contains a number of theoretical physics programs which are supported by Fittino.
+Within the framework, each program corresponds to a (set of) so-called <code class="docutils literal"><span class="pre">Calculator</span></code> (<code class="docutils literal"><span class="pre">s</span></code>), which
+can be understood as (a) wrapper class(es) allowing for a unified integration of the different codes
+and presenting a unified interface. If a user wants to make a program not on this list work together
+with Fittino, all he or she has to do is to write a <code class="docutils literal"><span class="pre">Find*.cmake</span></code> module and a corresponding
+<code class="docutils literal"><span class="pre">Calculator</span></code> class.</p>
+<ul>
+<li><div class="first line-block">
+<div class="line"><a class="reference external" href="http://www.feynhiggs.de/">FeynHiggs</a>: Fortran code for the diagrammatic calculation of the
+masses, mixings and much more of Higgs bosons in the MSSM at the two-loop level</div>
+<div class="line"><strong>Requires:</strong></div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li>The Fortran compilers <a class="reference external" href="https://gcc.gnu.org/wiki/GFortran">gfortran</a> or <a class="reference external" href="https://software.intel.com/en-us/fortran-compilers">ifort</a></li>
+</ul>
+</div></blockquote>
+</li>
+<li><div class="first line-block">
+<div class="line"><a class="reference external" href="http://gm2calc.hepforge.org/">GM2Calc</a>: Precise calculation of the muon anomalous magnetic
+moment in the MSSM</div>
+<div class="line"><strong>Requires:</strong></div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</a>: A C++ template library for
+linear algebra</li>
+</ul>
+</div></blockquote>
+</li>
+<li><div class="first line-block">
+<div class="line"><a class="reference external" href="http://lcgapp.cern.ch/project/simu/HepMC/">HepMC</a>: A C++ Event Record for Monte Carlo
+Generators</div>
+</div>
+</li>
+<li><div class="first line-block">
+<div class="line"><a class="reference external" href="http://higgsbounds.hepforge.org/">HiggsBounds</a>: HiggsBounds takes a selection of Higgs
+sector predictions for any particular model as input and then uses the experimental topological
+cross section limits from Higgs searches at LEP, the Tevatron and the LHC to determine if this
+parameter point has been excluded at 95% C.L.</div>
+<div class="line"><strong>Requires:</strong></div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li>The Fortran compilers <a class="reference external" href="https://gcc.gnu.org/wiki/GFortran">gfortran</a> or <a class="reference external" href="https://software.intel.com/en-us/fortran-compilers">ifort</a></li>
+</ul>
+</div></blockquote>
+</li>
+<li><div class="first line-block">
+<div class="line"><a class="reference external" href="http://higgsbounds.hepforge.org/">HiggsSignals</a>: HiggsSignals performs a statistical test of
+the Higgs sector predictions of arbitrary models (using the HiggsBounds input routines) with
+the measurements of Higgs boson signal rates and masses from the Tevatron and the LHC</div>
+<div class="line"><strong>Requires:</strong></div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li>The Fortran compilers <a class="reference external" href="https://gcc.gnu.org/wiki/GFortran">gfortran</a> or <a class="reference external" href="https://software.intel.com/en-us/fortran-compilers">ifort</a></li>
+</ul>
+</div></blockquote>
+</li>
+<li><div class="first line-block">
+<div class="line"><a class="reference external" href="https://lapth.cnrs.fr/micromegas/">Micromegas</a>: A code for the calculation of Dark Matter
+Properties including the relic density, direct and indirect rates in a general supersymmetric
+model and other models of New Physics</div>
+<div class="line"><strong>Requires:</strong></div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://www.x.org/wiki/">X11</a>: The X Window System</li>
+</ul>
+</div></blockquote>
+</li>
+<li><div class="first line-block">
+<div class="line"><a class="reference external" href="http://superiso.in2p3.fr/">SuperIso</a>: Calculation of flavour physics observables</div>
+</div>
+</li>
+</ul>
+<p>The following programs need not to be present at compile-time in order to build Fittino. However,
+Fittino needs the individually required packages to be present at compile-time. For example, in
+order to build Fittino with support for SPheno, SLHAea is mandatory. In order to use one of these
+program at run-time, it needs to be installed and (a pointer to) the executable must exit in the
+directory from where Fittino is invoked.</p>
+<ul>
+<li><div class="first line-block">
+<div class="line"><a class="reference external" href="http://checkmate.hepforge.org/">CheckMATE</a>: A tool to easily test simulated event files
+against LHC results</div>
+</div>
+</li>
+<li><div class="first line-block">
+<div class="line"><a class="reference external" href="http://herwig.hepforge.org/">Herwig++</a>: Herwig++ is a particle physics event generator,
+written in C++</div>
+</div>
+</li>
+<li><div class="first line-block">
+<div class="line"><a class="reference external" href="https://cp3.irmp.ucl.ac.be/projects/madgraph/">MadGraph</a>: A framework that aims at providing
+all the elements necessary for SM and BSM phenomenology, such as the computations of cross
+sections, the generation of hard events and their matching with event generators, and the use
+of a variety of tools relevant to event manipulation and analysis</div>
+</div>
+</li>
+<li><div class="first line-block">
+<div class="line"><a class="reference external" href="http://pauli.uni-muenster.de/~akule_01/nllwiki/index.php/NLL-fast">NLLFast</a>: A computer
+program which computes the squark and gluino hadroproduction cross sections including
+next-to-leading order (NLO) supersymmetric QCD corrections and the resummation of soft gluon
+emission at next-to-leading-logarithmic (NLL) accuracy</div>
+</div>
+</li>
+<li><div class="first line-block">
+<div class="line"><a class="reference external" href="http://smodels.hephy.at/wiki">SmodelS</a>: A tool for interpreting simplified-model results
+from the LHC</div>
+<div class="line"><strong>Requires:</strong></div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li>The <a class="reference external" href="https://www.python.org/">Python</a> programming language</li>
+</ul>
+</div></blockquote>
+</li>
+<li><div class="first line-block">
+<div class="line"><a class="reference external" href="https://spheno.hepforge.org/">SPheno</a>: SPheno stands for S(upersymmetric) Pheno(menology).
+The code calculates the SUSY spectrum using low energy data and a user supplied high scale
+model as input</div>
+<div class="line"><strong>Requires:</strong></div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://fthomas.github.io/slhaea/">SLHAea</a>: An easy to use C++ library for input, output,
+and manipulation of data in the SUSY Les Houches Accord (SLHA)</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>A number of smaller projects, to which also members of the Fittino development team are
+contributing, is hosted in the same repository as Fittino and can be found in the <code class="docutils literal"><span class="pre">external/</span></code>
+directory. These are</p>
+<ul>
+<li><div class="first line-block">
+<div class="line">CheckVacuum</div>
+</div>
+</li>
+<li><div class="first line-block">
+<div class="line">HDim6</div>
+<div class="line"><strong>Requires:</strong></div>
+</div>
+<blockquote>
+<div><ul>
+<li><div class="first line-block">
+<div class="line"><a class="reference external" href="https://lhapdf.hepforge.org/">LHAPDF</a>: A general purpose C++ interpolator, used for
+evaluating PDFs from discretised data files</div>
+</div>
+</li>
+<li><div class="first line-block">
+<div class="line"><a class="reference external" href="http://www.gnu.org/software/gsl/">GSL</a>: The GNU Scientific Library</div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>Again, for information on how to install and setup these programs/libraries, it is recommended to
+consult the documentation at the individual project&#8217;s websites.</p>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="building.html">Building and installing Fittino</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="troubleshooting.html">CMake variables</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Mathias Uhlenbrock.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

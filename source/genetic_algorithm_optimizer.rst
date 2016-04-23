@@ -1,0 +1,6 @@
+GeneticAlgorithmOptimizer
+=========================
+
+``MutationRate``
+
+``SizeOfPopulation``

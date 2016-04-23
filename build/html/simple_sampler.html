@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SimpleSampler &mdash; Fittino 2-0-0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2-0-0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Fittino 2-0-0 documentation" href="index.html" />
+    <link rel="up" title="Samplers" href="samplers.html" />
+    <link rel="next" title="TreeSampler" href="tree_sampler.html" />
+    <link rel="prev" title="MarkovChainSampler" href="markov_chain_sampler.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>Fittino 2-0-0 documentation</span></a></h1>
+        <h2 class="heading"><span>SimpleSampler</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="markov_chain_sampler.html">MarkovChainSampler</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="tree_sampler.html">TreeSampler</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="simplesampler">
+<h1>SimpleSampler<a class="headerlink" href="#simplesampler" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal"><span class="pre">SimpleSampler</span></code> simply samples every point (incremented by the parameter error) within the
+specified parameter bounds. For that, it loops recursively over the dimensions of the parameter
+space. Understandably, this simple, brute-force approach is suited only for parameter spaces with
+low dimensionality, since the computational costs raise with the power of the number of parameters.
+Nevertheless, the <code class="docutils literal"><span class="pre">SimpleSampler</span></code> has its applications, e.g. if one wants to do a quick scan of a
+sub-space (while keeping the other parameters fixed). More importantly, the <code class="docutils literal"><span class="pre">SimpleSampler</span></code> can be
+used to produce a (coarse) grid of a parameter (sub-) space, where the computation of individual
+points takes too much time. The points of the interpolated grid can then be sampled easily, which is
+in some situations the only way to extract information about the parameter space of interest.</p>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="markov_chain_sampler.html">MarkovChainSampler</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="tree_sampler.html">TreeSampler</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Mathias Uhlenbrock.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

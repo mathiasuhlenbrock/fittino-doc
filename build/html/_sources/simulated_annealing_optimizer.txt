@@ -1,0 +1,6 @@
+SimulatedAnnealingOptimizer
+===========================
+
+``InitialTemperature``
+
+``TemperatureReductionFactor``

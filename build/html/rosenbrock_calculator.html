@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>RosenbrockCalculator &mdash; Fittino 2-0-0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2-0-0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Fittino 2-0-0 documentation" href="index.html" />
+    <link rel="up" title="Calculators" href="calculators.html" />
+    <link rel="next" title="TreeCalculator" href="tree_calculator.html" />
+    <link rel="prev" title="RegressionCalculator" href="regression_calculator.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>Fittino 2-0-0 documentation</span></a></h1>
+        <h2 class="heading"><span>RosenbrockCalculator</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="regression_calculator.html">RegressionCalculator</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="tree_calculator.html">TreeCalculator</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="rosenbrockcalculator">
+<h1>RosenbrockCalculator<a class="headerlink" href="#rosenbrockcalculator" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal"><span class="pre">RosenbrockCalculator</span></code> evaluates the Rosenbrock function</p>
+<div class="math">
+<p><img src="_images/math/7c27d02c9218fe43baf445755c8f9f54dad37fea.png" alt="f(\mathbf{x})=\sum_{i=1}^{N}\left(1-x_{i-1}\right)^2+100\cdot\left(x_{i}-x_{i-1}^2\right)^2"/></p>
+</div><p>for an arbitrary number of arguments <img class="math" src="_images/math/75e27f04188974063be3230dca208cd495b77ce1.png" alt="N"/>. The Rosenbrock function is a simple but not trivial
+optimization problem which can be used as a test model for the validation of Fittino&#8217;s
+functionality, especially for the optimization and sampling algorithms. For low dimensionality, the
+Rosenbrock function can also be computed by the <code class="docutils literal"><span class="pre">FormulaCalculator</span></code> but at some point the explicit
+notation becomes tedious. In addition, the <code class="docutils literal"><span class="pre">RosenbrockCalculator</span></code> might be a helpful simplistic
+example for developers who want to implement their own custom <code class="docutils literal"><span class="pre">Calculator</span></code> class.</p>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="regression_calculator.html">RegressionCalculator</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="tree_calculator.html">TreeCalculator</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Mathias Uhlenbrock.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

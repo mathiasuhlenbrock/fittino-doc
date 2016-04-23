@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Style guide &mdash; Fittino 2-0-0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2-0-0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Fittino 2-0-0 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>Fittino 2-0-0 documentation</span></a></h1>
+        <h2 class="heading"><span>Style guide</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="style-guide">
+<span id="id1"></span><h1>Style guide<a class="headerlink" href="#style-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="general-remarks">
+<h2>General remarks<a class="headerlink" href="#general-remarks" title="Permalink to this headline">¶</a></h2>
+<p>Most of the overall style definitions are enforced by running the astyle command as the last step of
+the development process of your class. However, the code has to satisfy a few more style conventions
+used throughout Fittino that astyle cannot account for (e.g. sorting). This page is intended to
+serve as a guidline.</p>
+<div class="section" id="header-files-style">
+<h3>Header files style<a class="headerlink" href="#header-files-style" title="Permalink to this headline">¶</a></h3>
+<p><strong>Include file order</strong></p>
+<ul class="simple">
+<li>Standard C++ include libraries</li>
+<li>ROOT include files</li>
+<li>Fittino include files</li>
+</ul>
+<p>Seperate each block with a newline. Within each block sort the items alphabetically.</p>
+<p><strong>Class member order</strong></p>
+<p>Sort all class members according to their visibility:</p>
+<ul class="simple">
+<li>public static data members</li>
+<li>public data members</li>
+<li>public static function members</li>
+<li>public function members</li>
+<li>protected static data members</li>
+<li>protected data members</li>
+<li>protected static function members</li>
+<li>protected function members</li>
+<li>private static data members</li>
+<li>private data members</li>
+<li>private static function members</li>
+<li>private function members</li>
+</ul>
+<p>Include operators after functions. Seperate each block with a newline. Within each block sort the
+items alphabetically starting with the data type.</p>
+<ul class="simple">
+<li>built-in types</li>
+<li>STL types</li>
+<li>ROOT classes</li>
+<li>Fittino classes</li>
+</ul>
+<p>The only exeptions are the constructor and the destructor members which should be always the first
+items in their respective block. Add virtual functions after all regular functions. Apart from that,
+sort them like regular functions.</p>
+</div>
+<div class="section" id="source-files-style">
+<h3>Source files style<a class="headerlink" href="#source-files-style" title="Permalink to this headline">¶</a></h3>
+<p>Sort the include files in the same way as in the header files. Arrange the implementation of the
+functions in the same order as in the header file.  Seperate the functions with a newline.</p>
+<p>After writing your code make sure everything is fine by using the astyle command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ astyle –options=devel/astyle-header-options &lt;filename.h&gt;
+$ astyle –options=devel/astyle-options &lt;filename.cpp&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Mathias Uhlenbrock.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>
